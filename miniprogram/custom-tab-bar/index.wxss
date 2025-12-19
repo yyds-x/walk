@@ -1,0 +1,130 @@
+.tab-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 80px; /* Adjust based on design, usually includes safe area */
+  background: white;
+  display: flex;
+  padding-bottom: env(safe-area-inset-bottom);
+  box-shadow: 0px 0px 8px 0px rgba(206, 199, 199, 0.3);
+}
+
+.tab-bar-border {
+  background-color: rgba(0, 0, 0, 0.33);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 1px;
+  transform: scaleY(0.5);
+  display: none;
+}
+
+.tab-bar-item {
+  flex: 1;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.icon-container {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin-bottom: 2px;
+}
+
+.icon-image {
+  width: 24px;
+  height: 24px;
+}
+
+.tab-text {
+  font-size: 10px;
+  line-height: 14px;
+  font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", SimHei, Arial, Helvetica, sans-serif;
+}
+
+/* Specific adjustments */
+.inactive-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.active-icon {
+  width: 24px;
+  height: 24px;
+}
+
+/* Complex Icons */
+.complex-icon-wrapper {
+  position: relative;
+  width: 24px;
+  height: 24px; /* Default wrapper size */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.complex-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.complex-inner {
+  position: relative;
+  z-index: 2;
+}
+
+/* Tab 1 Active Inner */
+.complex-inner-0 {
+  width: 9px;
+  height: 9px;
+  margin-bottom: 2px;
+}
+
+/* Tab 4 Active Inner */
+.complex-inner-3 {
+  width: 8px;
+  height: 4px;
+  margin-top: 4px;
+}
+
+/* Tab 3 Active Inner Group */
+.inner-group-3 {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  /* Adjust based on inner icon sizes */
+}
+
+.inner-3-item {
+  display: block;
+}
+
+.inner-3-1 {
+  width: 7px;
+  height: 1px;
+  margin-bottom: 2px;
+}
+.inner-3-2 {
+  width: 7px;
+  height: 1px;
+  margin-bottom: 2px;
+}
+.inner-3-3 {
+  width: 3px;
+  height: 1px;
+}
