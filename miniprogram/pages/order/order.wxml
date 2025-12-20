@@ -1,1 +1,43 @@
-<view>order</view>
+<view class="container">
+  <!-- Tabs -->
+  <view class="tabs">
+    <block wx:for="{{tabs}}" wx:key="*this">
+      <view class="tab-item {{activeTab === index ? 'active' : ''}}" bindtap="onTabClick" data-index="{{index}}">
+        <text class="tab-text">{{item}}</text>
+        <view class="tab-indicator" wx:if="{{activeTab === index}}"></view>
+      </view>
+    </block>
+  </view>
+
+  <!-- Order List -->
+  <scroll-view scroll-y class="order-list">
+    <block wx:for="{{orders}}" wx:key="id">
+      <view class="order-card">
+        <!-- Header -->
+        <view class="order-header">
+          <view class="order-info">
+            <text class="order-no">订单编号：{{item.id}}</text>
+            <text class="order-date">{{item.date}}</text>
+          </view>
+          <text class="order-status">{{item.status}}</text>
+        </view>
+        
+        <!-- Product -->
+        <view class="product-container">
+          <image class="product-image" src="{{item.image}}" mode="aspectFill"></image>
+          <view class="product-details">
+            <text class="product-title">{{item.title}}</text>
+            <view class="product-meta">
+              <text class="product-value">{{item.value}}活力值</text>
+              <view class="product-tag">
+                <text>{{item.tag}}</text>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </block>
+    <!-- Spacer for bottom tab bar -->
+    <view class="spacer" style="height: 120rpx;"></view>
+  </scroll-view>
+</view>

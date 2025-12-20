@@ -21,27 +21,19 @@
     "list": [
       {
         "pagePath": "pages/index/index",
-        "text": "推荐",
-        "iconPath": "images/house.png",
-        "selectedIconPath": "images/house1.png"
+        "text": "推荐"
       },
       {
         "pagePath": "pages/welfare/welfare",
-        "text": "福利",
-        "iconPath": "images/bubble_circle.png",
-        "selectedIconPath": "images/bubble_circle1.png"
+        "text": "福利"
       },
       {
         "pagePath": "pages/order/order",
-        "text": "订单",
-        "iconPath": "images/house.png",
-        "selectedIconPath": "images/house1.png"
+        "text": "订单"
       },
       {
         "pagePath": "pages/my/my",
-        "text": "我的",
-        "iconPath": "images/bubble_circle.png",
-        "selectedIconPath": "images/bubble_circle1.png"
+        "text": "我的"
       }
     ]
   },
