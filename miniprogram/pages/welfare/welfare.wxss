@@ -1,1 +1,396 @@
 /* pages/welfare/welfare.wxss */
+.container {
+  position: relative;
+  min-height: 100vh;
+  background-color: #f7f7f7;
+  font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica,
+    Segoe UI, Arial, Roboto, 'PingFang SC', 'miui', 'Hiragino Sans GB', 'Microsoft Yahei',
+    sans-serif;
+}
+
+.bg-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  z-index: 0;
+}
+
+/* Custom Navigation */
+.custom-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* background: transparent; */
+}
+
+.nav-title {
+  color: #fff;
+  font-size: 34rpx;
+  font-weight: 500;
+}
+
+.help-icon {
+  position: absolute;
+  right: 210rpx; /* Left of the capsule button area */
+  width: 60rpx;
+  height: 60rpx;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 0 10rpx;
+}
+
+.help-icon .dot {
+  width: 6rpx;
+  height: 6rpx;
+  background: #fff;
+  border-radius: 50%;
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  padding-top: 0;
+}
+
+/* Hero Section */
+.hero-section {
+  position: relative;
+  width: 100%;
+  height: 750rpx; /* Approximate height for the top area */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.big-bubble {
+  position: relative;
+  width: 380rpx;
+  height: 380rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bubble-bg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  transform: translate(-50%, -50%);
+}
+
+.bubble-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.score {
+  font-size: 80rpx;
+  font-weight: bold;
+  color: #fff;
+  line-height: 1;
+  text-shadow: 0 2rpx 4rpx rgba(0,0,0,0.1);
+}
+
+.label {
+  font-size: 24rpx;
+  color: rgba(255, 255, 255, 0.9);
+  margin-top: 10rpx;
+}
+
+/* Small Bubbles */
+.small-bubble {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.circle {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #fff;
+  border: 4rpx solid rgba(255,255,255,0.3);
+  box-shadow: 0 4rpx 10rpx rgba(0,0,0,0.1);
+}
+
+.circle.orange {
+  background: linear-gradient(135deg, #ffca28, #ff9800);
+}
+
+.s-label {
+  font-size: 20rpx;
+  color: #fff;
+  margin-top: 8rpx;
+  text-shadow: 0 1rpx 2rpx rgba(0,0,0,0.2);
+}
+
+/* Positioning Small Bubbles */
+/* These values are guesses based on the visual, need tuning */
+.pos-tl {
+  top: 0rpx;
+  left: 80rpx;
+}
+
+.pos-bl {
+  top: 200rpx;
+  left: 60rpx;
+}
+
+.pos-tr {
+  top: 300rpx;
+  right: 80rpx;
+}
+
+.pos-br {
+  top: 0rpx;
+  right: 60rpx;
+}
+
+/* Step Board */
+.step-board {
+  position: absolute;
+  left: 50rpx;
+  bottom: 320rpx;
+  /* background: linear-gradient(90deg, #ff9800, #ffb74d); */
+  /* padding: 10rpx 30rpx 10rpx 20rpx; */
+  /* border-radius: 0 30rpx 30rpx 0; */
+  /* box-shadow: 0 4rpx 8rpx rgba(0,0,0,0.1); */
+  color: #8B4513;
+  display: flex;
+  flex-direction: column;
+  transform: rotate(-8deg);
+  transform-origin: left center;
+  text-align: center;
+}
+
+.sb-title {
+  font-size: 22rpx;
+  font-weight: bold;
+  color: #5d4037;
+}
+
+.sb-num {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #3e2723;
+}
+
+/* Invite Button */
+.invite-btn-wrapper {
+  position: absolute;
+  top: 58%; /* Overlap with the hills */
+  width: 600rpx;
+  height: 100rpx;
+  z-index: 10;
+}
+
+.invite-bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.invite-text {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 32rpx;
+  font-weight: bold;
+  text-shadow: 0 2rpx 2rpx rgba(255, 152, 0, 0.8);
+}
+
+/* Main Body */
+.main-body {
+  position: relative;
+  background-color: #fff;
+  border-radius: 40rpx 40rpx 0 0;
+  margin-top: -210rpx; /* Pull up to cover bottom of bg image */
+  padding: 40rpx 30rpx;
+  min-height: 500rpx;
+}
+
+/* Section Common */
+.section {
+  margin-bottom: 40rpx;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20rpx;
+}
+
+.sec-title {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #333;
+}
+
+.toggle-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.toggle-text {
+  font-size: 24rpx;
+  color: #999;
+  margin-right: 10rpx;
+}
+
+/* Red Packet Card */
+.promo-card {
+  position: relative;
+  width: 100%;
+  height: 180rpx;
+  border-radius: 20rpx;
+  overflow: hidden;
+  box-shadow: 0 8rpx 20rpx rgba(255, 87, 34, 0.2);
+}
+
+.promo-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.promo-content {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 30rpx;
+}
+
+.promo-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.promo-main-text {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #fff;
+  display: flex;
+  align-items: baseline;
+}
+
+.highlight {
+  font-size: 56rpx;
+  margin: 0 8rpx;
+  color: #fff;
+}
+
+.promo-sub {
+  font-size: 24rpx;
+  color: rgba(255, 255, 255, 0.8);
+  margin-top: 10rpx;
+}
+
+.promo-right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.open-btn {
+  width: 100rpx;
+  height: 100rpx;
+}
+
+/* Task List */
+.task-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.task-item {
+  display: flex;
+  align-items: center;
+  padding: 30rpx 0;
+  border-bottom: 1rpx solid #f0f0f0;
+}
+
+.task-item:last-child {
+  border-bottom: none;
+}
+
+.task-icon {
+  width: 80rpx;
+  height: 80rpx;
+  margin-right: 24rpx;
+}
+
+.task-middle {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.task-name {
+  font-size: 30rpx;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 8rpx;
+}
+
+.task-desc {
+  font-size: 24rpx;
+  color: #999;
+}
+
+.task-action {
+  display: flex;
+  align-items: center;
+  background: #4caf50; /* Green pill */
+  padding: 8rpx 20rpx;
+  border-radius: 30rpx;
+}
+
+.coin-sm {
+  width: 32rpx;
+  height: 32rpx;
+  margin-right: 8rpx;
+}
+
+.reward-txt {
+  font-size: 28rpx;
+  color: #fff;
+  font-weight: 500;
+}

@@ -1,1 +1,141 @@
-<view>welfare</view>
+<view class="container">
+  <!-- Background Image -->
+  <image class="bg-image" src="../../images/welfare/beijing.svg" mode="widthFix"></image>
+
+  <!-- Custom Navigation Bar -->
+  <view class="custom-nav" style="padding-top: {{statusBarHeight}}px; height: {{navBarHeight}}px;">
+    <view class="nav-title">福利</view>
+    <!-- Top Right Help Icon (Placeholder if image not found, or use CSS circle) -->
+    <view class="help-icon">
+       <view class="dot"></view>
+       <view class="dot"></view>
+       <view class="dot"></view>
+    </view>
+  </view>
+
+  <view class="content">
+    <!-- Hero Section -->
+    <view class="hero-section">
+      
+      <!-- Big Bubble -->
+      <view class="big-bubble">
+        <image class="bubble-bg" src="../../images/welfare/daqipao.svg"></image>
+        <view class="bubble-text">
+          <text class="score">496.00</text>
+          <text class="label">我的活力值</text>
+        </view>
+      </view>
+
+      <!-- Small Bubbles -->
+      <view class="small-bubble pos-tl">
+        <view class="circle orange">6</view>
+        <text class="s-label">幸运金币</text>
+      </view>
+      <view class="small-bubble pos-bl">
+        <view class="circle orange">5</view>
+        <text class="s-label">幸运金币</text>
+      </view>
+      <view class="small-bubble pos-tr">
+        <view class="circle orange">9</view>
+        <text class="s-label">步数奖励</text>
+      </view>
+      <view class="small-bubble pos-br">
+        <view class="circle orange">8</view>
+        <text class="s-label">签到奖励</text>
+      </view>
+
+      <!-- Step Board -->
+      <view class="step-board">
+        <text class="sb-title">今日步数</text>
+        <text class="sb-num">34353</text>
+      </view>
+
+      <!-- Invite Button -->
+      <view class="invite-btn-wrapper">
+        <image class="invite-bg" src="../../images/welfare/anniu.svg"></image>
+        <text class="invite-text">邀请好友获取9~99活力值</text>
+      </view>
+    </view>
+
+    <!-- Main Content Body (White rounded card look) -->
+    <view class="main-body">
+      
+      <!-- Daily Red Packet -->
+      <view class="section">
+        <view class="section-header">
+          <text class="sec-title">每日领红包</text>
+          <view class="toggle-wrapper">
+            <text class="toggle-text">红包提醒</text>
+            <switch checked color="#07c160" style="transform: scale(0.7);"/>
+          </view>
+        </view>
+        
+        <view class="promo-card">
+          <image class="promo-bg" src="../../images/welfare/hongbao.svg" mode="aspectFill"></image>
+          <view class="promo-content">
+            <view class="promo-left">
+              <view class="promo-main-text">
+                <text>每天瓜分</text>
+                <text class="highlight">8000</text>
+                <text>元</text>
+              </view>
+              <text class="promo-sub">已有32432人参加</text>
+            </view>
+          </view>
+        </view>
+      </view>
+
+      <!-- Tasks -->
+      <view class="section">
+        <view class="section-header">
+          <text class="sec-title">做任务赢活力值</text>
+        </view>
+
+        <!-- Task List -->
+        <view class="task-list">
+          <!-- Task 1 -->
+          <view class="task-item">
+            <image class="task-icon" src="../../images/welfare/bangdingshoujihao.svg"></image>
+            <view class="task-middle">
+              <text class="task-name">绑定手机号</text>
+              <text class="task-desc">维护财富安全</text>
+            </view>
+            <view class="task-action">
+              <image class="coin-sm" src="../../images/welfare/huolizhi.svg"></image>
+              <text class="reward-txt">+300</text>
+            </view>
+          </view>
+
+          <!-- Task 2 -->
+          <view class="task-item">
+            <image class="task-icon" src="../../images/welfare/shouquanweixing.svg"></image>
+            <view class="task-middle">
+              <text class="task-name">授权微信个人信息</text>
+              <text class="task-desc">小手一挥奖励拿走</text>
+            </view>
+            <view class="task-action">
+              <image class="coin-sm" src="../../images/welfare/huolizhi.svg"></image>
+              <text class="reward-txt">+300</text>
+            </view>
+          </view>
+
+          <!-- Task 3 -->
+          <view class="task-item">
+            <image class="task-icon" src="../../images/welfare/yaoqinghaoyou.svg"></image>
+            <view class="task-middle">
+              <text class="task-name">邀请好友赚活力值</text>
+              <text class="task-desc">多劳多得，邀请好友得奖励</text>
+            </view>
+            <view class="task-action">
+              <image class="coin-sm" src="../../images/welfare/huolizhi.svg"></image>
+              <text class="reward-txt">+300</text>
+            </view>
+          </view>
+        </view>
+      </view>
+      
+      <!-- Spacer -->
+      <view style="height: 20rpx;"></view>
+    </view>
+  </view>
+</view>
