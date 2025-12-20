@@ -1,54 +1,115 @@
-<!--index.wxml-->
-<scroll-view class="scrollarea" scroll-y type="list">
-  <view style="display: flex; flex-direction: column; align-items: center; position: relative;">
-    <image src="/images/bg.png" mode="aspectFill" style="position: absolute; width: 100%;"/>
-    <image src="/images/head.png" mode="aspectFit" style="position: absolute; height: 320rpx; top: 30rpx; right:-140rpx"/>
-
-    <text style="width: 630rpx; font-size: 36rpx; font-weight: 500; color: rgba(0,0,0,0.9); margin-top: 86.4rpx; margin-bottom: 21.6rpx;">一套代码多端运行</text>
-    <text style="width: 630rpx; font-size: 27rpx; font-weight: 400; color: rgba(0,0,0,0.55); margin-bottom: 10.8rpx;">可使用小程序技术和工具</text>
-    <p style="width: 630rpx; font-size: 27rpx; font-weight: 400; color: rgba(0,0,0,0.55);">构建 iOS/Android 应用</p>
-    <view style="width: 630rpx; z-index: 10;">
-      <div catch:tap="toCases" style="font-size: 25.2rpx; font-weight: 500; color: rgba(0,0,0,0.9); margin-top: 28.8rpx; margin-bottom: 100.8rpx; background-color: rgba(0,0,0,0.05); width: 144rpx; height: 57.6rpx; display: flex; justify-content: center; align-items: center; border-radius: 10.8rpx;">
-        查看案例
-      </div>
-    </view>
-
-
-    <view style="width: 687.6rpx; padding: 28.8rpx; box-sizing: border-box; border-radius:21.6rpx; background-color: white;">
-      <text style="font-weight: 500; color: rgba(0,0,0,0.9); font-size: 27rpx;">框架特性</text>
-      <view style="font-weight: 400; color: rgba(0,0,0,0.3); font-size: 27rpx; margin-top: 14.5rpx; margin-bottom: 50rpx;">多端模式开发App，不影响小程序开发</view>
-      <view style="display: flex; align-items: center;">
-        <image src="/images/Icon1.png" mode="aspectFit" style="width: 43.2rpx; height: 43.2rpx; margin-right: 21.6rpx;" />
-        <text style="font-weight: 400; color: rgba(0,0,0,0.9); font-size: 27rpx;">开发流程一致，0门槛可上手。</text>
-      </view>
-      <view style="display: flex; align-items: center; margin-bottom: 43.2rpx; margin-top: 43.2rpx;">
-        <image src="/images/Icon2.png" mode="aspectFit" style="width: 43.2rpx; height: 43.2rpx; margin-right: 21.6rpx;" />
-        <text style="font-weight: 400; color: rgba(0,0,0,0.9); font-size: 27rpx;">支持条件编译，无缝跨平台。</text>
-      </view>
-      <view style="display: flex; align-items: center; margin-bottom: 21.6rpx;">
-        <image src="/images/Icon3.png" mode="aspectFit" style="width: 43.2rpx; height: 43.2rpx; margin-right: 21.6rpx;" />
-        <text style="font-weight: 400; color: rgba(0,0,0,0.9); font-size: 27rpx;">支持 Skyline，可媲美原生。</text>
-      </view>
-    </view>
-
-    <view style="width: 687.6rpx; padding: 28.8rpx; box-sizing: border-box; border-radius:21.6rpx; background-color: white; margin-top: 29rpx; margin-bottom: 100rpx;">
-      <text style="font-weight: 500; color: rgba(0,0,0,0.9); font-size: 27rpx;">应用场景</text>
-      <view style="margin-bottom: 50rpx;"></view>
-      <view style="display: flex; align-items: center;">
-        <image src="/images/Icon4.png" mode="aspectFit" style="width: 43.2rpx; height: 43.2rpx; margin-right: 21.6rpx;" />
-        <text style="font-weight: 400; color: rgba(0,0,0,0.9); font-size: 27rpx;">双端看剧更便捷</text>
-      </view>
-      <view style="display: flex; align-items: center; margin-bottom: 43.2rpx; margin-top: 43.2rpx;">
-        <image src="/images/Icon5.png" mode="aspectFit" style="width: 43.2rpx; height: 43.2rpx; margin-right: 21.6rpx;" />
-        <text style="font-weight: 400; color: rgba(0,0,0,0.9); font-size: 27rpx;">双端学习更高效</text>
-      </view>
-      <view style="display: flex; align-items: center; margin-bottom: 21.6rpx;">
-        <image src="/images/Icon6.png" mode="aspectFit" style="width: 43.2rpx; height: 43.2rpx; margin-right: 21.6rpx;" />
-        <text style="font-weight: 400; color: rgba(0,0,0,0.9); font-size: 27rpx;">双端用工具更顺畅</text>
-      </view>
-    </view>
-
-
+<view class="frame120">
+  <!-- Hero Banner -->
+  <view class="frame48">
+    <image class="frame48-bg" src="/images/home/banner.svg" mode="aspectFill"></image>
   </view>
 
-</scroll-view>
+  <!-- Feature Icons Grid -->
+  <view class="autoWrapper14">
+    <!-- Item 1: 砍步 -->
+    <view class="autoWrapper8">
+      <image class="full-icon" src="/images/home/kanbu.svg"></image>
+    </view>
+
+    <!-- Item 2: 步数挑战 -->
+    <view class="autoWrapper9">
+       <image class="full-icon" src="/images/home/bushutiaozhan.svg"></image>
+    </view>
+
+    <!-- Item 3: 闯关 -->
+    <view class="autoWrapper10">
+       <image class="full-icon" src="/images/home/chuangguan.svg"></image>
+    </view>
+
+    <!-- Item 4: 免费夺宝 -->
+    <view class="autoWrapper11">
+      <image class="full-icon" src="/images/home/mianfeiduobao.svg"></image>
+    </view>
+
+    <!-- Item 5: 签到有礼 -->
+    <view class="autoWrapper13">
+       <image class="full-icon" src="/images/home/qiandaoyouli.svg"></image>
+    </view>
+  </view>
+
+  <!-- Feature Labels -->
+  <view class="autoWrapper15">
+    <text class="text2">砍步</text>
+    <text class="text3">步数挑战</text>
+    <text class="text3">闯关</text>
+    <text class="text4">免费夺宝</text>
+    <text class="text5">签到有礼</text>
+  </view>
+
+  <!-- Task Banner -->
+  <view class="jiaonangbanner">
+    <image class="frame99" src="/images/home/jiaonangbanner.svg" style="width: 100%; height: 100%;"></image>
+  </view>
+
+  <!-- Section Header -->
+  <view class="autoWrapper16">
+    <text class="text6">V联盟</text>
+    <view class="frame100">
+      <text class="text7">新人专区</text>
+    </view>
+    <text class="text8">快来领取新人专属福利吧</text>
+    <view class="frame101">
+      <text class="text9">更多</text>
+      <image class="gengduo" src="/images/home/mjdwvnps-fe85w0y.svg"></image>
+    </view>
+  </view>
+
+  <!-- Product List -->
+  <view class="autoWrapper23">
+    <!-- Item 1 -->
+    <view class="frame108">
+      <view class="frame103">
+        <image class="frame102" src="/images/home/1.svg"></image>
+      </view>
+      <view class="autoWrapper19">
+        <text class="text10">白千层肚150g新鲜毛肚牛杂涮火\n锅食材</text>
+        <view class="autoWrapper17">
+          <view class="frame104"><text class="text11">签到</text></view>
+          <view class="frame105"><text class="text11">邀好友</text></view>
+          <view class="frame107">
+             <view class="frame106"><text class="text12">赚</text></view>
+             <view class="text15">
+               <text class="text13">¥</text>
+               <text class="text14">2</text>
+             </view>
+          </view>
+        </view>
+        <view class="autoWrapper18">
+          <text class="text16">456人已兑换</text>
+          <text class="text17">500活力值</text>
+        </view>
+      </view>
+    </view>
+
+    <!-- Item 2 -->
+    <view class="frame109">
+      <image class="a2" src="/images/home/2.svg"></image>
+      <view class="autoWrapper20">
+         <text class="text10">雄丰牛筋丸500g肉丸火锅料麻辣\n烫丸子速冻食品餐饮</text>
+         <view class="autoWrapper17">
+          <view class="frame104"><text class="text11">签到</text></view>
+          <view class="frame105"><text class="text11">邀好友</text></view>
+          <view class="frame107">
+             <view class="frame106"><text class="text12">赚</text></view>
+             <view class="text15">
+               <text class="text13">¥</text>
+               <text class="text14">2</text>
+             </view>
+          </view>
+        </view>
+        <view class="autoWrapper18">
+          <text class="text16">2343人已兑换</text>
+          <text class="text17">500活力值</text>
+        </view>
+      </view>
+    </view>
+    
+    <!-- Floating Button (Limited Time) -->
+    <image class="frame110" src="/images/home/mjdwvnps-lddbjyd.svg"></image>
+  </view>
+</view>
