@@ -133,9 +133,6 @@
           </view>
         </view>
       </view>
-      
-      <!-- Spacer -->
-      <view style="height: 20rpx;"></view>
     </view>
   </view>
 </view>
