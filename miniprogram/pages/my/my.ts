@@ -1,3 +1,5 @@
+import { wxLogin, isLoggedIn, getUserInfo, logout } from '../../utils/login'
+
 Page({
   data: {
     userInfo: {
@@ -25,7 +27,8 @@ Page({
       { id: 2, title: '好店推荐', subtitle: '推荐商家', icon: '/images/my/haodiantuijian.svg' },
       { id: 3, title: '会员服务', subtitle: '线下自主设备', icon: '/images/my/huiyuanfuwu.svg' },
       { id: 4, title: '领券中心', subtitle: '领券尽享优惠', icon: '/images/my/lingjuanzhongxing.svg' }
-    ]
+    ],
+    isLoggedIn: false
   },
 
   onShow() {
@@ -34,10 +37,69 @@ Page({
         selected: 3
       })
     }
+    this.updateLoginStatus()
   },
 
   onLoad() {
-    // Here you would typically fetch user data
+    this.updateLoginStatus()
+  },
+
+  updateLoginStatus() {
+    const loggedIn = isLoggedIn()
+    this.setData({ isLoggedIn: loggedIn })
+    if (loggedIn) {
+      const userInfo = getUserInfo()
+      if (userInfo) {
+        this.setData({
+          userInfo: {
+            ...this.data.userInfo,
+            ...userInfo
+          }
+        })
+      }
+    }
+  },
+
+  handleLogin() {
+    // 未登录，执行登录
+    wxLogin((userInfo) => {
+      this.setData({
+        isLoggedIn: true,
+        userInfo: {
+          ...this.data.userInfo,
+          ...userInfo
+        }
+      })
+      wx.showToast({
+        title: '登录成功',
+        icon: 'success'
+      })
+    })
+  },
+
+  handleLogout() {
+    // 已登录，退出登录
+    wx.showModal({
+      title: '提示',
+      content: '确定要退出登录吗？',
+      success: (res) => {
+        if (res.confirm) {
+          logout()
+          this.setData({
+            isLoggedIn: false,
+            userInfo: {
+              avatarUrl: '/images/head.png',
+              nickName: '灵感设计',
+              id: '354334'
+            }
+          })
+          wx.showToast({
+            title: '已退出登录',
+            icon: 'success'
+          })
+        }
+      }
+    })
   },
 
   handleCheckIn() {

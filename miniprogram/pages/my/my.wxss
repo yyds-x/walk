@@ -82,6 +82,26 @@
   color: #333;
 }
 
+.login-btn {
+  background-color: #07c160;
+  padding: 8rpx 20rpx;
+  border-radius: 30rpx;
+  display: inline-flex;
+  align-items: center;
+  margin-top: 10rpx;
+}
+
+.login-icon {
+  margin-right: 8rpx;
+  font-size: 24rpx;
+}
+
+.login-btn text {
+  color: #fff;
+  font-size: 24rpx;
+  font-weight: 500;
+}
+
 .check-in-btn {
   background-color: #e0f8e9;
   padding: 10rpx 20rpx;
