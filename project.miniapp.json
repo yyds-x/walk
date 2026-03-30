@@ -5,7 +5,7 @@
   "versionCode": 100,
   "i18nFilePath": "i18n",
   "mini-ohos": {
-    "sdkVersion": ""
+    "sdkVersion": "0.5.1"
   },
   "mini-android": {
     "resourcePath": "miniapp/android/nativeResources",
@@ -35,7 +35,7 @@
     }
   },
   "mini-ios": {
-    "sdkVersion": "1.6.28",
+    "sdkVersion": "1.6.29",
     "toolkitVersion": "0.0.9",
     "useExtendedSdk": {
       "WeAppOpenFuns": true,

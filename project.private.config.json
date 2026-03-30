@@ -19,5 +19,6 @@
     "ignoreDevUnusedFiles": true
   },
   "libVersion": "3.12.1",
-  "projectname": "walk"
+  "projectname": "walk",
+  "condition": {}
 }

@@ -34,11 +34,28 @@ Component({
       }
     ]
   },
+  lifetimes: {
+    attached() {
+      const pages = getCurrentPages()
+      if (pages.length === 0) return
+      
+      const currentPage = pages[pages.length - 1]
+      const currentRoute = `/${currentPage.route}`
+      
+      const selected = this.data.list.findIndex(item => item.pagePath === currentRoute)
+      if (selected !== -1 && this.data.selected !== selected) {
+        this.setData({ selected })
+      }
+    }
+  },
   methods: {
     switchTab(e: any) {
       const data = e.currentTarget.dataset
       const url = data.path
-      wx.switchTab({url})
+      
+      wx.switchTab({
+        url
+      })
     }
   }
 })

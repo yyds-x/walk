@@ -8,6 +8,10 @@
   display: flex;
   padding-bottom: env(safe-area-inset-bottom);
   box-shadow: 0px 0px 8px 0px rgba(206, 199, 199, 0.3);
+  /* 性能优化：开启硬件加速 */
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  will-change: transform;
 }
 
 .tab-bar-border {
@@ -28,6 +32,13 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  /* 性能优化：减少重绘 */
+  transition: background-color 0.15s ease-out;
+}
+
+/* 点击反馈效果 */
+.tab-bar-item-hover {
+  background-color: rgba(0, 0, 0, 0.05);
 }
 
 .icon-container {
@@ -38,17 +49,24 @@
   align-items: center;
   position: relative;
   margin-bottom: 2px;
+  /* 性能优化：避免频繁重排 */
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
 }
 
 .icon-image {
   width: 24px;
   height: 24px;
+  /* 性能优化：图片缩放使用 transform */
+  transition: transform 0.15s ease-out;
 }
 
 .tab-text {
   font-size: 10px;
   line-height: 14px;
   font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", SimHei, Arial, Helvetica, sans-serif;
+  /* 性能优化：避免重排 */
+  transition: color 0.15s ease-out;
 }
 
 /* Specific adjustments */
