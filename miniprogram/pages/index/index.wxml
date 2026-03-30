@@ -55,7 +55,7 @@
     <text class="text8">快来领取新人专属福利吧</text>
     <view class="frame101">
       <text class="text9">更多</text>
-      <image class="gengduo" src="/images/home/mjdwvnps-fe85w0y.svg"></image>
+      <image class="gengduo" src="/images/home/gengduo.svg"></image>
     </view>
   </view>
 
@@ -110,6 +110,6 @@
     </view>
     
     <!-- Floating Button (Limited Time) -->
-    <image class="frame110" src="/images/home/mjdwvnps-lddbjyd.svg"></image>
+    <image class="frame110" src="/images/home/jiaonangbanner.svg"></image>
   </view>
 </view>

@@ -3,7 +3,7 @@ import { wxLogin, isLoggedIn, getUserInfo, logout } from '../../utils/login'
 Page({
   data: {
     userInfo: {
-      avatarUrl: '/images/head.png',
+      avatarUrl: '/images/my/head.svg',
       nickName: '灵感设计',
       id: '354334'
     },
