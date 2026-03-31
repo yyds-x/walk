@@ -88,7 +88,7 @@ Page({
           this.setData({
             isLoggedIn: false,
             userInfo: {
-              avatarUrl: '/images/head.png',
+              avatarUrl: '/images/my/head.png',
               nickName: '灵感设计',
               id: '354334'
             }
@@ -101,6 +101,14 @@ Page({
       }
     })
   },
+
+
+
+
+
+
+
+
 
   handleCheckIn() {
     wx.showToast({

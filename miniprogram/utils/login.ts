@@ -7,24 +7,26 @@
  * @param callback 登录成功后的回调函数
  */
 export function wxLogin(callback?: (userInfo: any) => void) {
-  // 调用云函数获取用户信息
+  // 调用统一登录云函数
   wx.cloud.callFunction({
-    name: 'getUserInfo',
+    name: 'login',
     success: (res) => {
-      console.log('获取用户信息成功:', res.result)
+      console.log('登录成功:', res.result)
       const result = res.result as any
-      const userInfo = {
-        openid: result?.openid || '',
-        appid: result?.appid || '',
-        unionid: result?.unionid || '',
-        nickName: '微信用户',
-        avatarUrl: '/images/head.png'
-      }
-      // 保存用户信息
-      wx.setStorageSync('userInfo', userInfo)
-      console.log('登录成功')
-      if (callback) {
-        callback(userInfo)
+      if (result.code === 0) {
+        const userInfo = result.data
+        // 保存用户信息到本地存储
+        wx.setStorageSync('userInfo', userInfo)
+        console.log('用户信息已保存:', userInfo)
+        if (callback) {
+          callback(userInfo)
+        }
+      } else {
+        console.error('登录失败:', result.message)
+        wx.showToast({
+          title: result.message || '登录失败',
+          icon: 'error'
+        })
       }
     },
     fail: (error) => {

@@ -20,7 +20,7 @@ exports.main = async (event, context) => {
         appid: 'sample_appid',
         unionid: '',
         nickName: '示例用户',
-        avatarUrl: '/images/head.png',
+        avatarUrl: '/images/my/head.png',
         createTime: new Date().getTime(),
         updateTime: new Date().getTime(),
         loginCount: 0,

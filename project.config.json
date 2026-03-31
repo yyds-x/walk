@@ -1,6 +1,7 @@
 {
   "description": "项目配置文件",
   "miniprogramRoot": "miniprogram/",
+  "cloudfunctionRoot": "cloudfunctions/",
   "compileType": "miniprogram",
   "setting": {
     "useCompilerPlugins": [
@@ -50,5 +51,9 @@
   },
   "appid": "wx63cb65462846adde",
   "projectname": "miniprogram-344",
+  "cloudbase": {
+    "envId": "cloud1-4gs1rgg8854b4ac1",
+    "privateKeyPath": ""
+  },
   "projectArchitecture": "multiPlatform"
 }
