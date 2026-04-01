@@ -28,7 +28,8 @@ Page({
       { id: 3, title: '会员服务', subtitle: '线下自主设备', icon: '/images/my/huiyuanfuwu.svg' },
       { id: 4, title: '领券中心', subtitle: '领券尽享优惠', icon: '/images/my/lingjuanzhongxing.svg' }
     ],
-    isLoggedIn: false
+    isLoggedIn: false,
+    isLoading: false
   },
 
   onShow() {
@@ -53,7 +54,8 @@ Page({
         this.setData({
           userInfo: {
             ...this.data.userInfo,
-            ...userInfo
+            ...userInfo,
+            id: userInfo.appid || userInfo.openid || this.data.userInfo.id
           }
         })
       }
@@ -61,15 +63,20 @@ Page({
   },
 
   handleLogin() {
-    // 未登录，执行登录
+    if (this.data.isLoading) return
+    this.setData({ isLoading: true })
+    wx.showLoading({ title: '登录中...', mask: true })
     wxLogin((userInfo) => {
       this.setData({
         isLoggedIn: true,
+        isLoading: false,
         userInfo: {
           ...this.data.userInfo,
-          ...userInfo
+          ...userInfo,
+          id: userInfo.appid || userInfo.openid
         }
       })
+      wx.hideLoading()
       wx.showToast({
         title: '登录成功',
         icon: 'success'
