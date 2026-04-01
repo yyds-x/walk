@@ -1,34 +1,34 @@
 <view class="frame120">
   <!-- Hero Banner -->
   <view class="frame48">
-    <image class="frame48-bg" src="/images/home/banner.svg" mode="aspectFill"></image>
+    <image class="frame48-bg" src="{{images.banner}}" mode="aspectFill"></image>
   </view>
 
   <!-- Feature Icons Grid -->
   <view class="autoWrapper14">
     <!-- Item 1: 砍步 -->
     <view class="autoWrapper8">
-      <image class="full-icon" src="/images/home/kanbu.svg"></image>
+      <image class="full-icon" src="{{images.kanbu}}"></image>
     </view>
 
     <!-- Item 2: 步数挑战 -->
     <view class="autoWrapper9">
-       <image class="full-icon" src="/images/home/bushutiaozhan.svg"></image>
+       <image class="full-icon" src="{{images.bushutiaozhan}}"></image>
     </view>
 
     <!-- Item 3: 闯关 -->
     <view class="autoWrapper10">
-       <image class="full-icon" src="/images/home/chuangguan.svg"></image>
+       <image class="full-icon" src="{{images.chuangguan}}"></image>
     </view>
 
     <!-- Item 4: 免费夺宝 -->
     <view class="autoWrapper11">
-      <image class="full-icon" src="/images/home/mianfeiduobao.svg"></image>
+      <image class="full-icon" src="{{images.mianfeiduobao}}"></image>
     </view>
 
     <!-- Item 5: 签到有礼 -->
     <view class="autoWrapper13">
-       <image class="full-icon" src="/images/home/qiandaoyouli.svg"></image>
+       <image class="full-icon" src="{{images.qiandaoyouli}}"></image>
     </view>
   </view>
 
@@ -43,7 +43,7 @@
 
   <!-- Task Banner -->
   <view class="jiaonangbanner">
-    <image class="frame99" src="/images/home/jiaonangbanner.svg" style="width: 100%; height: 100%;"></image>
+    <image class="frame99" src="{{images.jiaonangbanner}}" style="width: 100%; height: 100%;"></image>
   </view>
 
   <!-- Section Header -->
@@ -64,7 +64,7 @@
     <!-- Item 1 -->
     <view class="frame108">
       <view class="frame103">
-        <image class="frame102" src="/images/home/1.svg"></image>
+        <image class="frame102" src="{{images['1']}}"></image>
       </view>
       <view class="autoWrapper19">
         <text class="text10">白千层肚150g新鲜毛肚牛杂涮火\n锅食材</text>
@@ -88,7 +88,7 @@
 
     <!-- Item 2 -->
     <view class="frame109">
-      <image class="a2" src="/images/home/2.svg"></image>
+      <image class="a2" src="{{images['2']}}"></image>
       <view class="autoWrapper20">
          <text class="text10">雄丰牛筋丸500g肉丸火锅料麻辣\n烫丸子速冻食品餐饮</text>
          <view class="autoWrapper17">
@@ -110,6 +110,6 @@
     </view>
     
     <!-- Floating Button (Limited Time) -->
-    <image class="frame110" src="/images/home/jiaonangbanner.svg"></image>
+    <image class="frame110" src="{{images.jiaonangbanner}}"></image>
   </view>
 </view>

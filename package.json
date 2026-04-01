@@ -7,6 +7,7 @@
   "author": "",
   "license": "",
   "devDependencies": {
+    "@cloudbase/cli": "^2.12.10",
     "miniprogram-api-typings": "^2.8.3-1",
     "typescript": "^6.0.2"
   }

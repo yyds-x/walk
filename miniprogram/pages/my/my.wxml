@@ -6,17 +6,17 @@
 
   <!-- User Info Section -->
   <view class="user-card">
-    <view class="user-info">
+    <view class="user-info" bindtap="onUserInfoTap">
       <view class="avatar-container">
         <image class="avatar" src="{{userInfo.avatarUrl}}" mode="aspectFill"></image>
       </view>
       <view class="user-details">
-        <text class="user-name" bindtap="{{isLoggedIn ? 'handleLogout' : 'handleLogin'}}">{{isLoggedIn ? userInfo.nickName : (isLoading ? '登录中...' : '登录/注册')}}</text>
+        <text class="user-name">{{isLoggedIn ? userInfo.nickName : (isLoading ? '登录中...' : '登录/注册')}}</text>
         <view class="user-id-badge">
           <text>ID: {{userInfo.id}}</text>
         </view>
       </view>
-      <view class="check-in-btn" bindtap="handleCheckIn">
+      <view class="check-in-btn" catchtap="handleCheckIn">
         <text class="check-in-icon">✎</text>
         <text>签到赢好礼</text>
       </view>

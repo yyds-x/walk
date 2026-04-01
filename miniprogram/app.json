@@ -6,7 +6,8 @@
     "pages/my/my",
     "pages/cases/cases",
     "pages/logs/logs",
-    "pages/contact/contact"
+    "pages/contact/contact",
+    "pages/profile/profile"
   ],
   "window": {
     "navigationBarTextStyle": "black",

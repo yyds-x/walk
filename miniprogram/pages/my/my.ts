@@ -1,10 +1,10 @@
-import { wxLogin, isLoggedIn, getUserInfo, logout } from '../../utils/login'
+import { wxLogin, isLoggedIn, getUserInfo } from '../../utils/login'
 
 Page({
   data: {
     userInfo: {
       avatarUrl: '/images/my/head.svg',
-      nickName: '灵感设计',
+      nickName: '登录/注册',
       id: '354334'
     },
     stats: {
@@ -59,6 +59,22 @@ Page({
           }
         })
       }
+    } else {
+      this.setData({
+        userInfo: {
+          avatarUrl: '/images/my/head.svg',
+          nickName: '登录/注册',
+          id: '354334'
+        }
+      })
+    }
+  },
+
+  onUserInfoTap() {
+    if (this.data.isLoggedIn) {
+      wx.navigateTo({ url: '/pages/profile/profile' })
+    } else {
+      this.handleLogin()
     }
   },
 
@@ -81,31 +97,6 @@ Page({
         title: '登录成功',
         icon: 'success'
       })
-    })
-  },
-
-  handleLogout() {
-    // 已登录，退出登录
-    wx.showModal({
-      title: '提示',
-      content: '确定要退出登录吗？',
-      success: (res) => {
-        if (res.confirm) {
-          logout()
-          this.setData({
-            isLoggedIn: false,
-            userInfo: {
-              avatarUrl: '/images/my/head.png',
-              nickName: '灵感设计',
-              id: '354334'
-            }
-          })
-          wx.showToast({
-            title: '已退出登录',
-            icon: 'success'
-          })
-        }
-      }
     })
   },
 

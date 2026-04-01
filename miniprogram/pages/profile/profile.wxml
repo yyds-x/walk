@@ -1,0 +1,41 @@
+<view class="page">
+  <view class="card">
+    <button class="cell cell-btn" open-type="chooseAvatar" bindchooseavatar="onChooseAvatar">
+      <view class="cell-left">
+        <text class="cell-label">头像</text>
+      </view>
+      <view class="cell-right">
+        <image class="avatar" src="{{userInfo.avatarUrl}}" mode="aspectFill"></image>
+        <text class="cell-arrow">›</text>
+      </view>
+    </button>
+
+    <view class="divider"></view>
+
+    <view class="cell">
+      <view class="cell-left">
+        <text class="cell-label">昵称</text>
+      </view>
+      <view class="cell-right">
+        <input class="cell-input" type="nickname" value="{{userInfo.nickName}}" bindinput="onNicknameInput" />
+        <text class="cell-arrow">›</text>
+      </view>
+    </view>
+
+    <view class="divider"></view>
+
+    <view class="cell">
+      <view class="cell-left">
+        <text class="cell-label">ID</text>
+      </view>
+      <view class="cell-right">
+        <text class="cell-value">{{userInfo.id}}</text>
+        <text class="cell-arrow">›</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="logout-wrap" wx:if="{{isLoggedIn}}">
+    <button class="logout-btn" bindtap="handleLogout">退出登录</button>
+  </view>
+</view>
