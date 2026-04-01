@@ -1,6 +1,7 @@
 <view class="page">
   <view class="card">
-    <button class="cell cell-btn" open-type="chooseAvatar" bindchooseavatar="onChooseAvatar">
+
+    <button class="cell" open-type="chooseAvatar" bindchooseavatar="onChooseAvatar">
       <view class="cell-left">
         <text class="cell-label">头像</text>
       </view>
