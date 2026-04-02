@@ -3,7 +3,7 @@ import { isLoggedIn, getUserInfo, logout } from '../../utils/login'
 Page({
   data: {
     userInfo: {
-      avatarUrl: '/images/my/head.svg',
+      avatarUrl: '',
       nickName: '',
       id: ''
     },
@@ -35,11 +35,44 @@ Page({
 
   onChooseAvatar(e: any) {
     const avatarUrl = e.detail.avatarUrl
-    if (avatarUrl) {
-      this.setData({ 'userInfo.avatarUrl': avatarUrl })
-      const currentUserInfo = getUserInfo() || {}
-      wx.setStorageSync('userInfo', { ...currentUserInfo, avatarUrl })
-    }
+    if (!avatarUrl) return
+
+    wx.showLoading({ title: '上传中...' })
+
+    // 上传到云存储
+    const cloudPath = `avatars/${Date.now()}-${Math.random().toString(36).slice(2)}.png`
+    wx.cloud.uploadFile({
+      cloudPath,
+      filePath: avatarUrl,
+      success: (uploadRes) => {
+        const fileID = uploadRes.fileID
+        // 调用云函数更新数据库
+        wx.cloud.callFunction({
+          name: 'updateUserInfo',
+          data: {
+            openid: getUserInfo()?.openid,
+            avatarUrl: fileID
+          },
+          success: () => {
+            this.setData({ 'userInfo.avatarUrl': fileID })
+            const currentUserInfo = getUserInfo() || {}
+            wx.setStorageSync('userInfo', { ...currentUserInfo, avatarUrl: fileID })
+            wx.showToast({ title: '头像已更新', icon: 'success' })
+          },
+          fail: (err) => {
+            console.error('更新数据库失败:', err)
+            wx.showToast({ title: '更新失败', icon: 'error' })
+          }
+        })
+      },
+      fail: (err) => {
+        console.error('上传失败:', err)
+        wx.showToast({ title: '上传失败', icon: 'error' })
+      },
+      complete: () => {
+        wx.hideLoading()
+      }
+    })
   },
 
   handleLogout() {

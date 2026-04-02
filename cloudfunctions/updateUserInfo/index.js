@@ -39,7 +39,7 @@ exports.main = async (event, context) => {
     }
     
     // 更新用户信息
-    const updateData: any = {
+    const updateData = {
       updateTime: new Date().getTime()
     }
     
