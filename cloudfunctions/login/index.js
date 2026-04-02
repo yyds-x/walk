@@ -36,7 +36,11 @@ exports.main = async (event, context) => {
         createTime: new Date().getTime(),
         updateTime: new Date().getTime(),
         loginCount: 1,
-        lastLoginTime: new Date().getTime()
+        lastLoginTime: new Date().getTime(),
+        vitalityBalance: 0,
+        checkinStreak: 0,
+        lastCheckinDate: '',
+        totalCheckin: 0
       }
       
       const addResult = await db.collection('users').add({
@@ -80,6 +84,10 @@ exports.main = async (event, context) => {
         unionid: userData.unionid,
         nickName: userData.nickName,
         avatarUrl: userData.avatarUrl,
+        vitalityBalance: userData.vitalityBalance || 0,
+        checkinStreak: userData.checkinStreak || 0,
+        lastCheckinDate: userData.lastCheckinDate || '',
+        totalCheckin: userData.totalCheckin || 0,
         isNewUser: isNewUser,
         loginCount: userData.loginCount
       }

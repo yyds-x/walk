@@ -22,9 +22,9 @@ Page({
         this.setData({
           isLoggedIn: true,
           userInfo: {
-            avatarUrl: userInfo.avatarUrl || '/images/my/head.svg',
-            nickName: userInfo.nickName || '',
-            id: userInfo.appid || userInfo.openid || ''
+            avatarUrl: userInfo.avatarUrl ,
+            nickName: userInfo.nickName ,
+            id: userInfo.appid || userInfo.openid 
           }
         })
       }

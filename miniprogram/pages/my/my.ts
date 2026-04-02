@@ -56,6 +56,10 @@ Page({
             ...this.data.userInfo,
             ...userInfo,
             id: userInfo.appid || userInfo.openid || this.data.userInfo.id
+          },
+          stats: {
+            ...this.data.stats,
+            balance: String(userInfo.vitalityBalance ?? this.data.stats.balance)
           }
         })
       }
@@ -65,6 +69,10 @@ Page({
           avatarUrl: '/images/my/head.svg',
           nickName: '登录/注册',
           id: '354334'
+        },
+        stats: {
+          ...this.data.stats,
+          balance: '0'
         }
       })
     }
@@ -90,6 +98,10 @@ Page({
           ...this.data.userInfo,
           ...userInfo,
           id: userInfo.appid || userInfo.openid
+        },
+        stats: {
+          ...this.data.stats,
+          balance: String(userInfo.vitalityBalance ?? this.data.stats.balance)
         }
       })
       wx.hideLoading()
@@ -109,10 +121,30 @@ Page({
 
 
   handleCheckIn() {
-    wx.showToast({
-      title: '签到成功',
-      icon: 'success'
-    });
+    if (this.data.isLoggedIn) {
+      wx.navigateTo({ url: '/pages/checkin/checkin' })
+      return
+    }
+    if (this.data.isLoading) return
+    this.setData({ isLoading: true })
+    wx.showLoading({ title: '登录中...', mask: true })
+    wxLogin((userInfo) => {
+      this.setData({
+        isLoggedIn: true,
+        isLoading: false,
+        userInfo: {
+          ...this.data.userInfo,
+          ...userInfo,
+          id: userInfo.appid || userInfo.openid
+        },
+        stats: {
+          ...this.data.stats,
+          balance: String(userInfo.vitalityBalance ?? this.data.stats.balance)
+        }
+      })
+      wx.hideLoading()
+      wx.navigateTo({ url: '/pages/checkin/checkin' })
+    })
   },
 
   handleMenuClick(e: any) {

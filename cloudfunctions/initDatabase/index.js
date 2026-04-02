@@ -34,12 +34,16 @@ exports.main = async (event, context) => {
       
       console.log('已创建 users 集合并插入样例数据')
     }
+
+    await ensureCollections(db, ['checkin_records', 'vitality_ledger'])
     
     return {
       code: 0,
       message: '数据库初始化成功',
       data: {
-        usersCollection: userCollectionExists ? '已存在' : '已创建'
+        usersCollection: userCollectionExists ? '已存在' : '已创建',
+        checkinRecordsCollection: '已就绪',
+        vitalityLedgerCollection: '已就绪'
       }
     }
   } catch (error) {
@@ -49,6 +53,14 @@ exports.main = async (event, context) => {
       message: error.message || '数据库初始化失败',
       data: null
     }
+  }
+}
+
+async function ensureCollections(db, names) {
+  for (const name of names) {
+    try {
+      await db.createCollection(name)
+    } catch (e) {}
   }
 }
 

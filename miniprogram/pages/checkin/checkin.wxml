@@ -1,0 +1,113 @@
+<view class="page">
+  <view class="bg">
+
+    <view class="bg-inner" style="padding-top: {{statusBarHeight}}px;">
+      <view class="nav-row">
+        <view class="nav-back" bindtap="handleBack">
+          <text class="nav-back-icon">‹</text>
+        </view>
+      </view>
+      <view class="user-row">
+        <image class="avatar" src="{{userInfo.avatarUrl}}" mode="aspectFill"></image>
+        <view class="user-meta">
+          <text class="streak-title">已连续签到 {{streak}} 天</text>
+          <text class="streak-sub">再签到{{nextGiftDays}}天可获得大礼包</text>
+        </view>
+        <view class="balance">
+          <image class="balance-icon" src="/images/welfare/huolizhi.svg" mode="aspectFit"></image>
+          <text class="balance-num">{{balance}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="sign-card">
+    <view class="sign-head">
+      <text class="sign-title">连续签到领好礼</text>
+      <text class="sign-rule" bindtap="handleRulesTap">签到规则</text>
+    </view>
+    <view class="sign-days">
+      <block wx:for="{{days}}" wx:key="day">
+        <view class="day-item day-{{item.day}} {{item.state}}">
+          <text class="day-title">第{{item.day}}天</text>
+          <view class="day-icon">
+            <view wx:if="{{item.day === 1 && item.state === 'done'}}" class="day-check">✓</view>
+            <image wx:elif="{{item.day === 4}}" class="day-gift" src="/images/welfare/jiangli.svg" mode="aspectFit"></image>
+            <image wx:else class="day-coin" src="/images/welfare/huolizhi.svg" mode="aspectFit"></image>
+          </view>
+          <text class="day-reward">+{{item.reward}}活力值</text>
+        </view>
+      </block>
+    </view>
+    <view class="btn-wrap">
+      <view class="btn-shadow" wx:if="{{!checkedInToday}}"></view>
+      <view class="btn {{checkedInToday ? 'disabled' : ''}}" bindtap="handleCheckin">
+        <text class="btn-text">{{checkedInToday ? '已签到' : '立即签到'}}</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="content">
+    <view class="entry-card" bindtap="goLedger">
+      <view class="entry-left">
+        <view class="entry-icon-wrap">
+          <view class="entry-icon"></view>
+        </view>
+        <text class="entry-text">签到及活力值明细</text>
+      </view>
+      <image class="entry-arrow" src="/icons/s-arrow-g.svg" mode="aspectFit"></image>
+    </view>
+
+    <view class="tasks-card">
+      <text class="tasks-title">做任务赢活力值</text>
+
+      <view class="task-row" bindtap="handleTaskTap" data-type="bindPhone">
+        <view class="task-left">
+          <view class="task-badge task-blue">
+            <image class="task-badge-icon" src="/images/welfare/bangdingshoujihao.svg" mode="aspectFit"></image>
+          </view>
+          <view class="task-text">
+            <text class="task-name">绑定手机号</text>
+            <text class="task-desc">维护财富安全</text>
+          </view>
+        </view>
+        <view class="task-pill">
+          <image class="pill-icon" src="/images/welfare/huolizhi.svg" mode="aspectFit"></image>
+          <text class="pill-text">+300</text>
+        </view>
+      </view>
+
+      <view class="task-row mt-24" bindtap="handleTaskTap" data-type="authWx">
+        <view class="task-left">
+          <view class="task-badge task-green">
+            <image class="task-badge-icon" src="/images/welfare/shouquanweixing.svg" mode="aspectFit"></image>
+          </view>
+          <view class="task-text">
+            <text class="task-name">授权微信个人信息</text>
+            <text class="task-desc">小手一挥奖励拿走</text>
+          </view>
+        </view>
+        <view class="task-pill">
+          <image class="pill-icon" src="/images/welfare/huolizhi.svg" mode="aspectFit"></image>
+          <text class="pill-text">+300</text>
+        </view>
+      </view>
+
+      <view class="task-row mt-24" bindtap="handleTaskTap" data-type="invite">
+        <view class="task-left">
+          <view class="task-badge task-red">
+            <image class="task-badge-icon" src="/images/welfare/yaoqinghaoyou.svg" mode="aspectFit"></image>
+          </view>
+          <view class="task-text">
+            <text class="task-name">邀请好友赚活力值</text>
+            <text class="task-desc">多劳多得，邀请好友得奖励</text>
+          </view>
+        </view>
+        <view class="task-pill">
+          <image class="pill-icon" src="/images/welfare/huolizhi.svg" mode="aspectFit"></image>
+          <text class="pill-text">+300</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

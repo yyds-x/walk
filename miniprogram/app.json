@@ -7,7 +7,9 @@
     "pages/cases/cases",
     "pages/logs/logs",
     "pages/contact/contact",
-    "pages/profile/profile"
+    "pages/profile/profile",
+    "pages/checkin/checkin",
+    "pages/vitality_detail/vitality_detail"
   ],
   "window": {
     "navigationBarTextStyle": "black",
