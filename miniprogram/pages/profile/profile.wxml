@@ -18,10 +18,11 @@
         <text class="cell-label">昵称</text>
       </view>
       <view class="cell-right">
-        <input class="cell-input" type="nickname" value="{{userInfo.nickName}}" bindinput="onNicknameInput" />
+        <text class="cell-value">{{userInfo.nickName}}</text>
         <text class="cell-arrow">›</text>
       </view>
     </view>
+
 
     <view class="divider"></view>
 

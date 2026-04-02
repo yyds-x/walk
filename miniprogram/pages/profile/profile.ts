@@ -42,15 +42,6 @@ Page({
     }
   },
 
-  onNicknameInput(e: any) {
-    const nickName = e.detail.value
-    if (nickName) {
-      this.setData({ 'userInfo.nickName': nickName })
-      const currentUserInfo = getUserInfo() || {}
-      wx.setStorageSync('userInfo', { ...currentUserInfo, nickName })
-    }
-  },
-
   handleLogout() {
     wx.showModal({
       title: '提示',

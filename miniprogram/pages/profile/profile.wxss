@@ -95,6 +95,19 @@
   white-space: nowrap;
 }
 
+.cell-value.placeholder {
+  color: #c0c0c0;
+}
+
+.nickname-picker {
+  position: absolute;
+  left: -9999rpx;
+  top: 0;
+  width: 1rpx;
+  height: 1rpx;
+  opacity: 0;
+}
+
 .cell-arrow {
   font-size: 34rpx;
   color: #c8c8c8;
