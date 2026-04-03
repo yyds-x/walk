@@ -18,7 +18,7 @@
     "checkInvalidKey": true,
     "ignoreDevUnusedFiles": true
   },
-  "libVersion": "3.12.1",
+  "libVersion": "3.15.0",
   "projectname": "walk",
   "condition": {}
 }

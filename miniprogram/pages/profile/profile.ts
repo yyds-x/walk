@@ -46,11 +46,12 @@ Page({
       filePath: avatarUrl,
       success: (uploadRes) => {
         const fileID = uploadRes.fileID
+        const current = getUserInfo() as any
         // 调用云函数更新数据库
         wx.cloud.callFunction({
           name: 'updateUserInfo',
           data: {
-            openid: getUserInfo()?.openid,
+            openid: current && current.openid ? current.openid : '',
             avatarUrl: fileID
           },
           success: () => {

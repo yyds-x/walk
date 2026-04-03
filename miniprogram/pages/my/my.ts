@@ -59,7 +59,7 @@ Page({
           },
           stats: {
             ...this.data.stats,
-            balance: String(userInfo.vitalityBalance ?? this.data.stats.balance)
+            balance: String(userInfo.vitalityBalance !== null && userInfo.vitalityBalance !== undefined ? userInfo.vitalityBalance : this.data.stats.balance)
           }
         })
       }
@@ -101,7 +101,7 @@ Page({
         },
         stats: {
           ...this.data.stats,
-          balance: String(userInfo.vitalityBalance ?? this.data.stats.balance)
+          balance: String(userInfo.vitalityBalance !== null && userInfo.vitalityBalance !== undefined ? userInfo.vitalityBalance : this.data.stats.balance)
         }
       })
       wx.hideLoading()
@@ -139,7 +139,7 @@ Page({
         },
         stats: {
           ...this.data.stats,
-          balance: String(userInfo.vitalityBalance ?? this.data.stats.balance)
+          balance: String(userInfo.vitalityBalance !== null && userInfo.vitalityBalance !== undefined ? userInfo.vitalityBalance : this.data.stats.balance)
         }
       })
       wx.hideLoading()

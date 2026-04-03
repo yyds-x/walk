@@ -96,13 +96,15 @@ Page({
       name: 'checkin',
       data: { action: 'ledger', offset, pageSize },
       success: (res) => {
-        const result = res.result as any
-        if (result?.code !== 0) {
-          wx.showToast({ title: result?.message || '加载失败', icon: 'none' })
+        const result = (res as any).result || {}
+        const code = (result && typeof result === 'object' && 'code' in result) ? (result as any).code : undefined
+        const message = (result && typeof result === 'object' && 'message' in result) ? (result as any).message : ''
+        if (code !== 0) {
+          wx.showToast({ title: message || '加载失败', icon: 'none' })
           return
         }
 
-        const list = (result?.data?.list || []) as LedgerItem[]
+        const list = (result && typeof result === 'object' && result.data && result.data.list) ? (result.data.list as LedgerItem[]) : []
         const mapped = list.map((it) => ({
           id: it._id || `${it.createdAt || 0}-${Math.random()}`,
           title: formatTitle(it.type),
@@ -134,15 +136,18 @@ Page({
       name: 'checkin',
       data: { action: 'status' },
       success: (res) => {
-        const result = res.result as any
-        if (result?.code !== 0) {
-          wx.showToast({ title: result?.message || '加载失败', icon: 'none' })
+        const result = (res as any).result || {}
+        const code = (result && typeof result === 'object' && 'code' in result) ? (result as any).code : undefined
+        const message = (result && typeof result === 'object' && 'message' in result) ? (result as any).message : ''
+        if (code !== 0) {
+          wx.showToast({ title: message || '加载失败', icon: 'none' })
           return
         }
 
-        const todayStr = String(result?.data?.todayStr || '')
-        const balance = Number(result?.data?.balance || 0)
-        const list = (result?.data?.ledger || []) as LedgerItem[]
+        const data = (result && typeof result === 'object' && 'data' in result) ? (result as any).data : {}
+        const todayStr = String((data && data.todayStr) || '')
+        const balance = Number((data && data.balance) || 0)
+        const list = ((data && data.ledger) || []) as LedgerItem[]
         const todayTotal = list
           .filter((it) => String(it.dateStr || '') === todayStr)
           .reduce((sum, it) => sum + Math.max(0, Number(it.amount || 0)), 0)

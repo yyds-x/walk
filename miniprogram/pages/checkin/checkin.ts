@@ -94,9 +94,11 @@ Page({
       name: 'checkin',
       data: { action: 'status' },
       success: (res) => {
-        const result = res.result as any
-        if (result?.code !== 0) {
-          wx.showToast({ title: result?.message || '加载失败', icon: 'none' })
+        const result = (res as any).result || {}
+        const code = (result && typeof result === 'object' && 'code' in result) ? (result as any).code : undefined
+        const message = (result && typeof result === 'object' && 'message' in result) ? (result as any).message : ''
+        if (code !== 0) {
+          wx.showToast({ title: message || '加载失败', icon: 'none' })
           return
         }
         const data = result.data as CheckinStatus
@@ -115,8 +117,10 @@ Page({
       name: 'checkin',
       data: { action: 'do' },
       success: (res) => {
-        const result = res.result as any
-        if (result?.code === 0) {
+        const result = (res as any).result || {}
+        const code = (result && typeof result === 'object' && 'code' in result) ? (result as any).code : undefined
+        const message = (result && typeof result === 'object' && 'message' in result) ? (result as any).message : ''
+        if (code === 0) {
           const data = result.data as CheckinStatus & { reward: number }
           this.applyStatus(data)
           const current = getUserInfo() || {}
@@ -129,13 +133,13 @@ Page({
           wx.showToast({ title: `+${data.reward}活力值`, icon: 'success' })
           return
         }
-        if (result?.code === 1) {
+        if (code === 1) {
           const data = result.data as CheckinStatus
           this.applyStatus(data)
-          wx.showToast({ title: result?.message || '今日已签到', icon: 'none' })
+          wx.showToast({ title: message || '今日已签到', icon: 'none' })
           return
         }
-        wx.showToast({ title: result?.message || '签到失败', icon: 'none' })
+        wx.showToast({ title: message || '签到失败', icon: 'none' })
       },
       fail: () => {
         wx.showToast({ title: '签到失败', icon: 'none' })
