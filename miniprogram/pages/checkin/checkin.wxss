@@ -172,15 +172,16 @@
 .sign-days-top {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
+  gap: 20rpx;
 }
 
 .sign-days-bottom {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 18rpx;
-  margin-top: 20rpx;
+  gap: 20rpx;
+  margin-top: 28rpx;
 }
 
 .day-item {
@@ -191,7 +192,7 @@
   background: #f7f6f9;
   padding: 16rpx 22rpx 18rpx 24rpx;
   box-sizing: border-box;
-  width: 156rpx;
+  width: 140rpx;
 }
 
 .day-item.done {
@@ -262,7 +263,7 @@
 
 .btn-wrap {
   position: relative;
-  margin-top: 48rpx;
+  margin: 48rpx auto 0;
   width: 570rpx;
   height: 88rpx;
 }
@@ -270,12 +271,13 @@
 .btn-shadow {
   position: absolute;
   bottom: -4rpx;
-  left: 24rpx;
+  left: 50%;
   opacity: 0.51;
   background: #53d639;
   width: 522rpx;
   height: 28rpx;
   filter: blur(10rpx);
+  transform: translateX(-50%);
 }
 
 .btn {

@@ -32,7 +32,7 @@
           <view class="day-item day-{{item.day}} {{item.state}}">
             <text class="day-title">第{{item.day}}天</text>
             <view class="day-icon">
-              <image wx:if="{{item.day === 7}}" class="day-gift" src="/images/welfare/jiangli.svg" mode="aspectFit"></image>
+              <image wx:if="{{item.day === 8}}" class="day-gift" src="/images/welfare/jiangli.svg" mode="aspectFit"></image>
               <view wx:elif="{{item.state === 'done'}}" class="day-check">✓</view>
               <image wx:else class="day-coin" src="/images/welfare/huolizhi.svg" mode="aspectFit"></image>
             </view>
@@ -45,7 +45,7 @@
           <view class="day-item day-{{item.day}} {{item.state}}">
             <text class="day-title">第{{item.day}}天</text>
             <view class="day-icon">
-              <image wx:if="{{item.day === 7}}" class="day-gift" src="/images/welfare/jiangli.svg" mode="aspectFit"></image>
+              <image wx:if="{{item.day === 8}}" class="day-gift" src="/images/welfare/jiangli.svg" mode="aspectFit"></image>
               <view wx:elif="{{item.state === 'done'}}" class="day-check">✓</view>
               <image wx:else class="day-coin" src="/images/welfare/huolizhi.svg" mode="aspectFit"></image>
             </view>

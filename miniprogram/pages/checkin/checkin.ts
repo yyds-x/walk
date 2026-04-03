@@ -7,7 +7,7 @@ type CheckinStatus = {
   balance: number
 }
 
-const CYCLE_DAYS = 7
+const CYCLE_DAYS = 8
 
 function signedCountInCycle(streak: number) {
   if (streak <= 0) return 0
@@ -41,7 +41,8 @@ Page({
     daysBottom: [
       { day: 5, reward: 5, state: '' },
       { day: 6, reward: 5, state: '' },
-      { day: 7, reward: 5, state: '' }
+      { day: 7, reward: 5, state: '' },
+      { day: 8, reward: 5, state: '' }
     ],
     isLoading: false
   },
@@ -165,7 +166,7 @@ Page({
       balance: Number(data.balance || 0),
       nextGiftDays: nextGiftDays(streak),
       daysTop: days.slice(0, 4),
-      daysBottom: days.slice(4, 7)
+      daysBottom: days.slice(4, 8)
     })
   }
 })
