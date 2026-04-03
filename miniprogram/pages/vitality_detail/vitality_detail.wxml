@@ -1,22 +1,70 @@
 <view class="page">
-  <view class="nav">
-    <view class="nav-left" bindtap="handleBack">
-      <text class="back">‹</text>
+  <view class="nav" style="padding-top: {{statusBarHeight}}px;">
+    <view class="nav-inner">
+      <view class="nav-left" bindtap="handleBack">
+        <text class="back">‹</text>
+      </view>
+      <view class="nav-title">活力值余额</view>
+      <view class="nav-right">
+        <view class="nav-icon nav-icon-more" bindtap="handleMore">
+          <view class="nav-dots">
+            <view class="nav-dot"></view>
+            <view class="nav-dot"></view>
+            <view class="nav-dot"></view>
+          </view>
+        </view>
+        <button class="nav-icon nav-icon-share" open-type="share" hover-class="none">
+          <text class="nav-share-plus">+</text>
+        </button>
+      </view>
     </view>
-    <view class="nav-title">活力值明细</view>
-    <view class="nav-right"></view>
   </view>
 
-  <view class="list">
-    <block wx:for="{{items}}" wx:key="id">
-      <view class="item">
-        <view class="item-left">
-          <text class="item-title">{{item.title}}</text>
-          <text class="item-sub">{{item.sub}}</text>
+  <view class="hero">
+    <view class="hero-card">
+      <image class="hero-bg" src="/images/welfare/vitality_beijing.svg" mode="aspectFill"></image>
+      <view class="hero-content">
+        <view class="metrics">
+          <view class="metric">
+            <view class="metric-label">
+              <view class="metric-dot"></view>
+              <text class="metric-name">今日合计</text>
+            </view>
+            <text class="metric-value">{{todayTotal}}</text>
+          </view>
+          <view class="metric-divider"></view>
+          <view class="metric">
+            <view class="metric-label">
+              <view class="metric-dot"></view>
+              <text class="metric-name">我的活力值</text>
+            </view>
+            <text class="metric-value">{{balance}}</text>
+          </view>
         </view>
-        <text class="item-amount {{item.amount > 0 ? 'plus' : 'minus'}}">{{item.amount > 0 ? '+' : ''}}{{item.amount}}</text>
+
+        <view class="hero-btn-wrap">
+          <view class="hero-btn-shadow"></view>
+          <button class="hero-btn" open-type="share" hover-class="none">
+            <text class="hero-btn-text">推荐给好友赚活力值</text>
+          </button>
+        </view>
       </view>
-    </block>
+    </view>
+  </view>
+
+  <view class="ledger">
+    <view class="ledger-card" wx:if="{{items.length}}">
+      <block wx:for="{{items}}" wx:key="id">
+        <view class="row">
+          <view class="row-left">
+            <text class="row-title">{{item.title}}</text>
+            <text class="row-date">{{item.sub}}</text>
+          </view>
+          <text class="row-amount {{item.amount > 0 ? 'plus' : 'minus'}}">{{item.amount > 0 ? '+' : ''}}{{item.amountDisplay}}</text>
+        </view>
+        <view class="row-divider" wx:if="{{index !== items.length - 1}}"></view>
+      </block>
+    </view>
 
     <view class="empty" wx:if="{{!items.length && !isLoading}}">
       <text class="empty-text">暂无明细</text>
@@ -31,4 +79,3 @@
     </view>
   </view>
 </view>
-

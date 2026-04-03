@@ -7,16 +7,18 @@ type CheckinStatus = {
   balance: number
 }
 
+const CYCLE_DAYS = 7
+
 function signedCountInCycle(streak: number) {
   if (streak <= 0) return 0
-  const m = streak % 4
-  return m === 0 ? 4 : m
+  const m = streak % CYCLE_DAYS
+  return m === 0 ? CYCLE_DAYS : m
 }
 
 function nextGiftDays(streak: number) {
-  const m = streak % 4
-  const left = 4 - m
-  return left === 0 ? 4 : left
+  const m = streak % CYCLE_DAYS
+  const left = CYCLE_DAYS - m
+  return left === 0 ? CYCLE_DAYS : left
 }
 
 Page({
@@ -29,12 +31,17 @@ Page({
     todayStr: '',
     streak: 0,
     balance: 0,
-    nextGiftDays: 4,
-    days: [
+    nextGiftDays: CYCLE_DAYS,
+    daysTop: [
       { day: 1, reward: 5, state: '' },
       { day: 2, reward: 5, state: '' },
       { day: 3, reward: 5, state: '' },
       { day: 4, reward: 5, state: '' }
+    ],
+    daysBottom: [
+      { day: 5, reward: 5, state: '' },
+      { day: 6, reward: 5, state: '' },
+      { day: 7, reward: 5, state: '' }
     ],
     isLoading: false
   },
@@ -142,12 +149,12 @@ Page({
     const streak = Number(data.streak || 0)
     const signed = signedCountInCycle(streak)
     const checkedInToday = !!data.checkedInToday
-    const activeDay = checkedInToday ? signed : Math.min(4, signed + 1)
-    const days = [1, 2, 3, 4].map((d) => {
-      const state = d < activeDay ? 'done' : d === activeDay ? 'active' : ''
-      if (checkedInToday && d <= signed) {
-        return { day: d, reward: 5, state: d === signed ? 'done' : 'done' }
+    const activeDay = checkedInToday ? signed : Math.min(CYCLE_DAYS, signed + 1)
+    const days = Array.from({ length: CYCLE_DAYS }, (_, i) => i + 1).map((d) => {
+      if (checkedInToday) {
+        return { day: d, reward: 5, state: d <= signed ? 'done' : '' }
       }
+      const state = d < activeDay ? 'done' : d === activeDay ? 'active' : ''
       return { day: d, reward: 5, state }
     })
 
@@ -157,7 +164,8 @@ Page({
       streak,
       balance: Number(data.balance || 0),
       nextGiftDays: nextGiftDays(streak),
-      days
+      daysTop: days.slice(0, 4),
+      daysBottom: days.slice(4, 7)
     })
   }
 })

@@ -138,7 +138,7 @@
   top: 336rpx;
   left: 30rpx;
   width: 690rpx;
-  height: 488rpx;
+  height: 660rpx;
   border-radius: 24rpx;
   background: #ffffff;
   padding: 32rpx 32rpx 48rpx;
@@ -166,10 +166,21 @@
 }
 
 .sign-days {
+  margin-top: 36rpx;
+}
+
+.sign-days-top {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: 36rpx;
+}
+
+.sign-days-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18rpx;
+  margin-top: 20rpx;
 }
 
 .day-item {
@@ -183,14 +194,24 @@
   width: 156rpx;
 }
 
-.day-1.done {
+.day-item.done {
   box-shadow: 0 12rpx 20rpx rgba(25, 196, 16, 0.24);
   background-image: linear-gradient(201.18deg, #6dd400 -31.95%, #00c757 104.14%);
 }
 
-.day-1.done .day-title,
-.day-1.done .day-reward {
+.day-item.done .day-title,
+.day-item.done .day-reward {
   color: #ffffff;
+}
+
+.day-item.active {
+  background: #ecfff4;
+  box-shadow: 0 10rpx 18rpx rgba(25, 196, 16, 0.14);
+  border: 2rpx solid rgba(0, 199, 87, 0.6);
+}
+
+.day-item.active .day-reward {
+  color: rgba(0, 199, 87, 0.9);
 }
 
 .day-title {
@@ -304,7 +325,7 @@
 
 .content {
   background: #f8f9fc;
-  padding: 852rpx 30rpx 152rpx;
+  padding: 1024rpx 30rpx 152rpx;
   box-sizing: border-box;
   min-height: 100vh;
   position: relative;

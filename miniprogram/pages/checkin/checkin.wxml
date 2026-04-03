@@ -27,17 +27,32 @@
       <text class="sign-rule" bindtap="handleRulesTap">签到规则</text>
     </view>
     <view class="sign-days">
-      <block wx:for="{{days}}" wx:key="day">
-        <view class="day-item day-{{item.day}} {{item.state}}">
-          <text class="day-title">第{{item.day}}天</text>
-          <view class="day-icon">
-            <view wx:if="{{item.day === 1 && item.state === 'done'}}" class="day-check">✓</view>
-            <image wx:elif="{{item.day === 4}}" class="day-gift" src="/images/welfare/jiangli.svg" mode="aspectFit"></image>
-            <image wx:else class="day-coin" src="/images/welfare/huolizhi.svg" mode="aspectFit"></image>
+      <view class="sign-days-top">
+        <block wx:for="{{daysTop}}" wx:key="day">
+          <view class="day-item day-{{item.day}} {{item.state}}">
+            <text class="day-title">第{{item.day}}天</text>
+            <view class="day-icon">
+              <image wx:if="{{item.day === 7}}" class="day-gift" src="/images/welfare/jiangli.svg" mode="aspectFit"></image>
+              <view wx:elif="{{item.state === 'done'}}" class="day-check">✓</view>
+              <image wx:else class="day-coin" src="/images/welfare/huolizhi.svg" mode="aspectFit"></image>
+            </view>
+            <text class="day-reward">+{{item.reward}}活力值</text>
           </view>
-          <text class="day-reward">+{{item.reward}}活力值</text>
-        </view>
-      </block>
+        </block>
+      </view>
+      <view class="sign-days-bottom">
+        <block wx:for="{{daysBottom}}" wx:key="day">
+          <view class="day-item day-{{item.day}} {{item.state}}">
+            <text class="day-title">第{{item.day}}天</text>
+            <view class="day-icon">
+              <image wx:if="{{item.day === 7}}" class="day-gift" src="/images/welfare/jiangli.svg" mode="aspectFit"></image>
+              <view wx:elif="{{item.state === 'done'}}" class="day-check">✓</view>
+              <image wx:else class="day-coin" src="/images/welfare/huolizhi.svg" mode="aspectFit"></image>
+            </view>
+            <text class="day-reward">+{{item.reward}}活力值</text>
+          </view>
+        </block>
+      </view>
     </view>
     <view class="btn-wrap">
       <view class="btn-shadow" wx:if="{{!checkedInToday}}"></view>
