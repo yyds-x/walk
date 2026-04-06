@@ -11,6 +11,8 @@ type LedgerItem = {
 function formatTitle(type?: string) {
   if (type === 'checkin') return '签到奖励'
   if (type === 'steps') return '步数转化'
+  if (type === 'step_challenge_join') return '步数挑战报名'
+  if (type === 'step_challenge_reward') return '步数挑战奖励'
   if (type === 'redeem') return '兑换商品'
   if (type === 'invite') return '邀请奖励'
   return '活力值变动'

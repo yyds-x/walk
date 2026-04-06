@@ -242,6 +242,25 @@ page {
   color: #2f3f57;
 }
 
+.steps-sync {
+  position: absolute;
+  left: 20rpx;
+  bottom: 24rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 196rpx;
+  height: 50rpx;
+  padding: 0 20rpx;
+  border-radius: 999rpx;
+  background: rgba(22, 61, 96, 0.68);
+}
+
+.steps-sync-text {
+  font-size: 22rpx;
+  color: #ffffff;
+}
+
 .steps-track {
   display: flex;
   justify-content: space-between;
@@ -254,6 +273,12 @@ page {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 6rpx 10rpx 0;
+  border-radius: 20rpx;
+}
+
+.track-item-selected {
+  background: rgba(255, 255, 255, 0.14);
 }
 
 .track-dot {
@@ -268,10 +293,18 @@ page {
   background: #ffe95e;
 }
 
+.track-dot-selected {
+  box-shadow: 0 0 0 10rpx rgba(255, 255, 255, 0.18);
+}
+
 .track-text {
   margin-top: 12rpx;
   font-size: 22rpx;
   color: #ffffff;
+}
+
+.track-text-selected {
+  font-weight: 700;
 }
 
 .cards {
@@ -379,6 +412,11 @@ page {
   box-shadow: 0 10rpx 18rpx rgba(71, 205, 21, 0.28);
 }
 
+.signup-btn-disabled {
+  background: linear-gradient(180deg, #98c6a2 0%, #79af85 100%);
+  box-shadow: none;
+}
+
 .signup-btn-text {
   font-size: 28rpx;
   font-weight: 700;
@@ -422,4 +460,179 @@ page {
 .card-footer-text {
   font-size: 22rpx;
   color: #9ca7b5;
+}
+
+.leaderboard {
+  margin-top: 26rpx;
+  border-top: 2rpx solid #eef2f7;
+  padding-top: 22rpx;
+}
+
+.leaderboard-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.leaderboard-title {
+  font-size: 24rpx;
+  font-weight: 700;
+  color: #30425d;
+}
+
+.leaderboard-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 16rpx;
+  padding: 14rpx 18rpx;
+  border-radius: 18rpx;
+  background: #f5f8fc;
+}
+
+.leaderboard-row-me {
+  background: #e9fff1;
+}
+
+.leaderboard-rank,
+.leaderboard-steps,
+.leaderboard-state {
+  font-size: 22rpx;
+  color: #506175;
+}
+
+.history-panel {
+  border-radius: 22rpx;
+  background: #ffffff;
+  padding: 24rpx;
+  box-shadow: 0 10rpx 24rpx rgba(42, 72, 103, 0.06);
+}
+
+.history-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.history-title {
+  font-size: 28rpx;
+  font-weight: 700;
+  color: #22344d;
+}
+
+.history-item {
+  display: flex;
+  justify-content: space-between;
+  gap: 20rpx;
+  margin-top: 18rpx;
+  padding: 20rpx;
+  border-radius: 18rpx;
+  background: #f6f9fc;
+}
+
+.history-main,
+.history-side {
+  display: flex;
+  flex-direction: column;
+}
+
+.history-side {
+  align-items: flex-end;
+}
+
+.history-item-title {
+  font-size: 24rpx;
+  font-weight: 700;
+  color: #30425d;
+}
+
+.history-item-sub,
+.history-item-meta,
+.history-item-link {
+  margin-top: 8rpx;
+  font-size: 20rpx;
+  color: #8190a5;
+}
+
+.history-item-link {
+  color: #2d8cf0;
+}
+
+.detail-mask {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: flex-end;
+  background: rgba(11, 27, 43, 0.38);
+  z-index: 20;
+}
+
+.detail-sheet {
+  width: 100%;
+  max-height: 78vh;
+  border-radius: 32rpx 32rpx 0 0;
+  background: #ffffff;
+  padding: 28rpx 24rpx 40rpx;
+  box-sizing: border-box;
+}
+
+.detail-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.detail-title {
+  font-size: 30rpx;
+  font-weight: 700;
+  color: #22344d;
+}
+
+.detail-close {
+  font-size: 22rpx;
+  color: #7f8c9f;
+}
+
+.detail-loading,
+.detail-summary,
+.detail-status,
+.detail-reward,
+.detail-my {
+  display: block;
+  margin-top: 18rpx;
+  font-size: 24rpx;
+  color: #46576c;
+}
+
+.detail-status {
+  color: #1ba75b;
+  font-weight: 700;
+}
+
+.detail-rank-wrap {
+  margin-top: 24rpx;
+  border-top: 2rpx solid #eef2f7;
+  padding-top: 20rpx;
+}
+
+.detail-rank-title {
+  font-size: 24rpx;
+  font-weight: 700;
+  color: #30425d;
+}
+
+.detail-rank-row {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 14rpx;
+  padding: 14rpx 18rpx;
+  border-radius: 16rpx;
+  background: #f6f9fc;
+}
+
+.detail-rank-label,
+.detail-rank-steps,
+.detail-rank-state {
+  font-size: 22rpx;
+  color: #506175;
 }

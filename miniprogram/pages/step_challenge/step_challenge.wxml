@@ -31,18 +31,34 @@
         <view class="runner-leg runner-leg-right"></view>
       </view>
       <view class="steps-bubble">今日步数：{{todaySteps}}</view>
+      <view class="steps-sync" bindtap="handleSyncTap">
+        <text class="steps-sync-text">{{isSyncingSteps ? '同步中...' : '同步微信步数'}}</text>
+      </view>
     </view>
 
     <view class="steps-track">
-      <view wx:for="{{stepMarks}}" wx:key="step" class="track-item">
-        <view class="track-dot {{item.reached ? 'track-dot-active' : ''}}"></view>
-        <text class="track-text">{{item.step}}</text>
+      <view
+        wx:for="{{stepMarks}}"
+        wx:key="step"
+        class="track-item {{item.active ? 'track-item-selected' : ''}}"
+        data-step="{{item.value}}"
+        bindtap="handleStepMarkTap"
+      >
+        <view class="track-dot {{item.reached ? 'track-dot-active' : ''}} {{item.active ? 'track-dot-selected' : ''}}"></view>
+        <text class="track-text {{item.active ? 'track-text-selected' : ''}}">{{item.step}}</text>
       </view>
     </view>
   </view>
 
   <view class="cards">
-    <view wx:for="{{cards}}" wx:key="id" class="challenge-card">
+    <view
+      wx:for="{{cards}}"
+      wx:key="id"
+      class="challenge-card"
+      data-activity-id="{{item.activityId}}"
+      data-status-type="{{item.statusType}}"
+      bindtap="handleCardTap"
+    >
       <view class="card-head">
         <view class="card-title-wrap">
           <text class="card-title">{{item.title}}</text>
@@ -66,8 +82,14 @@
         </view>
       </view>
 
-      <view wx:if="{{item.id === 'tomorrow'}}" class="signup-btn" data-id="{{item.id}}" bindtap="handleActionTap">
-        <text class="signup-btn-text">立即报名</text>
+      <view
+        wx:if="{{item.buttonText}}"
+        class="signup-btn {{item.joined ? 'signup-btn-disabled' : ''}}"
+        data-activity-id="{{item.activityId}}"
+        data-action="{{item.buttonAction}}"
+        catchtap="handleActionTap"
+      >
+        <text class="signup-btn-text">{{item.buttonText}}</text>
       </view>
 
       <view wx:if="{{item.id === 'today'}}" class="today-extra">
@@ -87,6 +109,66 @@
 
       <view wx:if="{{item.actionText}}" class="card-footer">
         <text class="card-footer-text">{{item.actionText}}</text>
+      </view>
+
+      <view wx:if="{{item.leaderboard && item.leaderboard.length}}" class="leaderboard">
+        <view class="leaderboard-head">
+          <text class="leaderboard-title">排行榜</text>
+        </view>
+        <view wx:for="{{item.leaderboard}}" wx:key="rank" class="leaderboard-row {{item.isMe ? 'leaderboard-row-me' : ''}}">
+          <text class="leaderboard-rank">TOP {{item.rank}}</text>
+          <text class="leaderboard-steps">{{item.totalSteps}} 步</text>
+          <text class="leaderboard-state">{{item.qualifiedText}}</text>
+        </view>
+      </view>
+    </view>
+
+    <view wx:if="{{history.length}}" class="history-panel">
+      <view class="history-head">
+        <text class="history-title">历史挑战</text>
+      </view>
+      <view
+        wx:for="{{history}}"
+        wx:key="id"
+        class="history-item"
+        data-activity-id="{{item.id}}"
+        bindtap="handleHistoryTap"
+      >
+        <view class="history-main">
+          <text class="history-item-title">{{item.title}}</text>
+          <text class="history-item-sub">{{item.sub}}</text>
+        </view>
+        <view class="history-side">
+          <text class="history-item-meta">{{item.meta}}</text>
+          <text class="history-item-link">查看详情</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view wx:if="{{detailVisible}}" class="detail-mask" bindtap="closeDetail">
+    <view class="detail-sheet" catchtap="noop">
+      <view class="detail-head">
+        <text class="detail-title">{{detailData ? detailData.title : '挑战详情'}}</text>
+        <text class="detail-close" bindtap="closeDetail">关闭</text>
+      </view>
+
+      <view wx:if="{{detailLoading}}" class="detail-loading">加载中...</view>
+
+      <view wx:elif="{{detailData}}" class="detail-body">
+        <text class="detail-summary">{{detailData.summary}}</text>
+        <text class="detail-status">{{detailData.statusText}}</text>
+        <text class="detail-reward">{{detailData.rewardText}}</text>
+        <text class="detail-my">{{detailData.myText}}</text>
+
+        <view class="detail-rank-wrap">
+          <text class="detail-rank-title">榜单</text>
+          <view wx:for="{{detailData.leaderboard}}" wx:key="rank" class="detail-rank-row">
+            <text class="detail-rank-label">{{item.rank}}</text>
+            <text class="detail-rank-steps">{{item.steps}}</text>
+            <text class="detail-rank-state">{{item.state}}</text>
+          </view>
+        </view>
       </view>
     </view>
   </view>
