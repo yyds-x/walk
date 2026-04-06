@@ -1,0 +1,93 @@
+<view class="page">
+  <view class="hero">
+    <view class="hero-nav" style="height: {{navBarTotalHeight}}px;">
+      <view
+        class="nav-back"
+        bindtap="handleBack"
+        style="top: {{menuButtonTop}}px; width: {{menuButtonHeight}}px; height: {{menuButtonHeight}}px;"
+      ></view>
+      <text
+        class="nav-title"
+        style="top: {{navTitleTop}}px; line-height: {{menuButtonHeight}}px;"
+      >集步数赢活力值</text>
+    </view>
+
+    <view class="hero-scene">
+      <view class="mountain mountain-left"></view>
+      <view class="mountain mountain-right"></view>
+      <view class="hill hill-left"></view>
+      <view class="hill hill-right"></view>
+      <view class="tree tree-left"></view>
+      <view class="tree tree-right"></view>
+      <view class="road">
+        <view class="road-line"></view>
+      </view>
+      <view class="runner">
+        <view class="runner-head"></view>
+        <view class="runner-body"></view>
+        <view class="runner-arm runner-arm-left"></view>
+        <view class="runner-arm runner-arm-right"></view>
+        <view class="runner-leg runner-leg-left"></view>
+        <view class="runner-leg runner-leg-right"></view>
+      </view>
+      <view class="steps-bubble">今日步数：{{todaySteps}}</view>
+    </view>
+
+    <view class="steps-track">
+      <view wx:for="{{stepMarks}}" wx:key="step" class="track-item">
+        <view class="track-dot {{item.reached ? 'track-dot-active' : ''}}"></view>
+        <text class="track-text">{{item.step}}</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="cards">
+    <view wx:for="{{cards}}" wx:key="id" class="challenge-card">
+      <view class="card-head">
+        <view class="card-title-wrap">
+          <text class="card-title">{{item.title}}</text>
+          <text class="card-date">{{item.dateText}}</text>
+        </view>
+        <view class="card-status card-status-{{item.statusType}}">
+          <text class="card-status-text">{{item.statusText}}</text>
+        </view>
+      </view>
+
+      <view wx:if="{{item.hint}}" class="card-hint">{{item.hint}}</view>
+
+      <view class="metrics-row">
+        <view class="metric-block">
+          <text class="metric-value">{{item.leftValue}}</text>
+          <text class="metric-label">{{item.leftLabel}}</text>
+        </view>
+        <view class="metric-block">
+          <text class="metric-value">{{item.rightValue}}</text>
+          <text class="metric-label">{{item.rightLabel}}</text>
+        </view>
+      </view>
+
+      <view wx:if="{{item.id === 'tomorrow'}}" class="signup-btn" data-id="{{item.id}}" bindtap="handleActionTap">
+        <text class="signup-btn-text">立即报名</text>
+      </view>
+
+      <view wx:if="{{item.id === 'today'}}" class="today-extra">
+        <view class="extra-block">
+          <text class="extra-value success">{{item.extraLeft}}</text>
+          <text class="extra-label">预计奖励(活力值)</text>
+        </view>
+        <view class="extra-block">
+          <text class="extra-value">{{item.extraCenter}}</text>
+          <text class="extra-label">参与人数</text>
+        </view>
+        <view class="extra-block">
+          <text class="extra-value">{{item.extraRight}}</text>
+          <text class="extra-label">总奖励(活力值)</text>
+        </view>
+      </view>
+
+      <view wx:if="{{item.actionText}}" class="card-footer">
+        <text class="card-footer-text">{{item.actionText}}</text>
+      </view>
+    </view>
+  </view>
+</view>

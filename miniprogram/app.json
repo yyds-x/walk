@@ -9,7 +9,8 @@
     "pages/contact/contact",
     "pages/profile/profile",
     "pages/checkin/checkin",
-    "pages/vitality_detail/vitality_detail"
+    "pages/vitality_detail/vitality_detail",
+    "pages/step_challenge/step_challenge"
   ],
   "window": {
     "navigationBarTextStyle": "black",

@@ -1,0 +1,425 @@
+page {
+  background: linear-gradient(180deg, #1fb8f2 0%, #bdefff 34%, #f4f7fb 35%, #f7f8fc 100%);
+}
+
+.page {
+  min-height: 100vh;
+  padding-bottom: 40rpx;
+}
+
+.hero {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-nav {
+  position: relative;
+  box-sizing: border-box;
+  padding-left: 32rpx;
+  padding-right: 32rpx;
+}
+
+.nav-title {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 52rpx;
+  font-weight: 700;
+  white-space: nowrap;
+  color: #ffffff;
+  text-shadow: 0 6rpx 20rpx rgba(0, 57, 89, 0.18);
+}
+
+.nav-back {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.nav-back {
+  left: 24rpx;
+}
+
+.nav-back::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 14rpx;
+  height: 14rpx;
+  margin-left: -4rpx;
+  margin-top: -7rpx;
+  border-left: 4rpx solid #ffffff;
+  border-bottom: 4rpx solid #ffffff;
+  transform: rotate(45deg);
+}
+
+.hero-scene {
+  position: relative;
+  height: 390rpx;
+  overflow: hidden;
+}
+
+.mountain,
+.hill,
+.tree,
+.road,
+.runner,
+.steps-bubble {
+  position: absolute;
+}
+
+.mountain {
+  top: 56rpx;
+  width: 280rpx;
+  height: 170rpx;
+  background: linear-gradient(180deg, #5bb8ff 0%, #287cd6 100%);
+  border-radius: 48% 52% 40% 60% / 50% 40% 60% 50%;
+  opacity: 0.88;
+}
+
+.mountain-left {
+  left: -18rpx;
+}
+
+.mountain-right {
+  right: -20rpx;
+  width: 320rpx;
+  height: 184rpx;
+}
+
+.hill {
+  bottom: 68rpx;
+  width: 280rpx;
+  height: 120rpx;
+  background: linear-gradient(180deg, #4de663 0%, #16bb4b 100%);
+  border-radius: 50%;
+}
+
+.hill-left {
+  left: -40rpx;
+}
+
+.hill-right {
+  right: -30rpx;
+}
+
+.tree {
+  bottom: 96rpx;
+  width: 54rpx;
+  height: 130rpx;
+}
+
+.tree::before {
+  content: '';
+  position: absolute;
+  left: 22rpx;
+  bottom: 0;
+  width: 10rpx;
+  height: 48rpx;
+  background: #7a491b;
+  border-radius: 8rpx;
+}
+
+.tree::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 54rpx;
+  height: 84rpx;
+  background: linear-gradient(180deg, #29e76c 0%, #0eb44b 100%);
+  border-radius: 50% 50% 44% 56%;
+}
+
+.tree-left {
+  left: 66rpx;
+}
+
+.tree-right {
+  right: 74rpx;
+}
+
+.road {
+  left: 50%;
+  bottom: 0;
+  width: 196rpx;
+  height: 260rpx;
+  margin-left: -98rpx;
+  background: linear-gradient(180deg, #304965 0%, #1a2f46 100%);
+  border-radius: 120rpx 120rpx 0 0;
+}
+
+.road-line {
+  position: absolute;
+  left: 50%;
+  top: 20rpx;
+  width: 8rpx;
+  height: 220rpx;
+  margin-left: -4rpx;
+  background: repeating-linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.95) 0 20rpx,
+    transparent 20rpx 42rpx
+  );
+  border-radius: 999rpx;
+}
+
+.runner {
+  left: 50%;
+  bottom: 86rpx;
+  width: 90rpx;
+  height: 164rpx;
+  margin-left: -45rpx;
+}
+
+.runner-head {
+  position: absolute;
+  left: 28rpx;
+  top: 0;
+  width: 34rpx;
+  height: 34rpx;
+  border-radius: 50%;
+  background: #ffd3ae;
+}
+
+.runner-body {
+  position: absolute;
+  left: 22rpx;
+  top: 30rpx;
+  width: 46rpx;
+  height: 64rpx;
+  border-radius: 22rpx 22rpx 18rpx 18rpx;
+  background: #ffffff;
+}
+
+.runner-arm,
+.runner-leg {
+  position: absolute;
+  background: #ffbf91;
+  border-radius: 999rpx;
+}
+
+.runner-arm {
+  top: 42rpx;
+  width: 14rpx;
+  height: 56rpx;
+}
+
+.runner-arm-left {
+  left: 14rpx;
+  transform: rotate(30deg);
+}
+
+.runner-arm-right {
+  right: 12rpx;
+  transform: rotate(-24deg);
+}
+
+.runner-leg {
+  top: 86rpx;
+  width: 14rpx;
+  height: 72rpx;
+}
+
+.runner-leg-left {
+  left: 28rpx;
+  transform: rotate(12deg);
+}
+
+.runner-leg-right {
+  right: 24rpx;
+  transform: rotate(-14deg);
+}
+
+.steps-bubble {
+  left: 20rpx;
+  bottom: 84rpx;
+  padding: 12rpx 22rpx;
+  border-radius: 999rpx;
+  background: rgba(255, 255, 255, 0.9);
+  font-size: 24rpx;
+  color: #2f3f57;
+}
+
+.steps-track {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 0 34rpx 10rpx;
+  margin-top: -10rpx;
+}
+
+.track-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.track-dot {
+  width: 18rpx;
+  height: 18rpx;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.55);
+  box-shadow: 0 0 0 8rpx rgba(255, 255, 255, 0.12);
+}
+
+.track-dot-active {
+  background: #ffe95e;
+}
+
+.track-text {
+  margin-top: 12rpx;
+  font-size: 22rpx;
+  color: #ffffff;
+}
+
+.cards {
+  padding: 18rpx 14rpx 0;
+}
+
+.challenge-card {
+  margin-bottom: 18rpx;
+  border-radius: 22rpx;
+  background: #ffffff;
+  padding: 24rpx 24rpx 26rpx;
+  box-shadow: 0 10rpx 24rpx rgba(42, 72, 103, 0.06);
+}
+
+.card-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card-title-wrap {
+  display: flex;
+  align-items: baseline;
+}
+
+.card-title {
+  font-size: 34rpx;
+  font-weight: 700;
+  color: #22344d;
+}
+
+.card-date {
+  margin-left: 10rpx;
+  font-size: 22rpx;
+  color: #9aa7b7;
+}
+
+.card-status {
+  min-width: 102rpx;
+  height: 46rpx;
+  padding: 0 16rpx;
+  border-radius: 999rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-status-pending {
+  background: #4aa3ff;
+}
+
+.card-status-active {
+  background: #35c95e;
+}
+
+.card-status-done {
+  background: #c7ccd3;
+}
+
+.card-status-text {
+  font-size: 22rpx;
+  color: #ffffff;
+}
+
+.card-hint {
+  margin-top: 18rpx;
+  font-size: 22rpx;
+  color: #36485f;
+}
+
+.metrics-row {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 26rpx;
+}
+
+.metric-block {
+  flex: 1;
+  text-align: center;
+}
+
+.metric-value {
+  display: block;
+  font-size: 58rpx;
+  line-height: 1;
+  font-weight: 700;
+  color: #a5211f;
+}
+
+.metric-label {
+  display: block;
+  margin-top: 12rpx;
+  font-size: 22rpx;
+  color: #b8c0cb;
+}
+
+.signup-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 66rpx;
+  margin: 28rpx 30rpx 0;
+  border-radius: 999rpx;
+  background: linear-gradient(180deg, #49dd00 0%, #30c900 100%);
+  box-shadow: 0 10rpx 18rpx rgba(71, 205, 21, 0.28);
+}
+
+.signup-btn-text {
+  font-size: 28rpx;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.today-extra {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 28rpx;
+}
+
+.extra-block {
+  flex: 1;
+  text-align: center;
+}
+
+.extra-value {
+  display: block;
+  font-size: 34rpx;
+  font-weight: 700;
+  color: #5e6a78;
+}
+
+.extra-value.success {
+  color: #1bcf7d;
+}
+
+.extra-label {
+  display: block;
+  margin-top: 10rpx;
+  font-size: 20rpx;
+  color: #b8c0cb;
+}
+
+.card-footer {
+  margin-top: 22rpx;
+  text-align: center;
+}
+
+.card-footer-text {
+  font-size: 22rpx;
+  color: #9ca7b5;
+}

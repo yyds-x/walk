@@ -12,7 +12,7 @@
     </view>
 
     <!-- Item 2: 步数挑战 -->
-    <view class="autoWrapper9">
+    <view class="autoWrapper9" bindtap="goStepChallenge">
        <image class="full-icon" src="{{images.bushutiaozhan}}"></image>
     </view>
 
@@ -35,7 +35,7 @@
   <!-- Feature Labels -->
   <view class="autoWrapper15">
     <text class="text2">砍步</text>
-    <text class="text3">步数挑战</text>
+    <text class="text3" bindtap="goStepChallenge">步数挑战</text>
     <text class="text3">闯关</text>
     <text class="text4">免费夺宝</text>
     <text class="text5">签到有礼</text>
