@@ -10,6 +10,8 @@ page {
 .hero {
   position: relative;
   overflow: hidden;
+  padding-bottom: 22rpx;
+  background: linear-gradient(180deg, #1fb8f2 0%, #70d8ff 58%, #8fe2ff 100%);
 }
 
 .hero-nav {
@@ -58,6 +60,25 @@ page {
   position: relative;
   height: 390rpx;
   overflow: hidden;
+}
+
+.steps-track-shell {
+  position: relative;
+  margin: -26rpx 18rpx 0;
+  padding: 24rpx 18rpx 18rpx;
+  border-radius: 30rpx;
+  background: linear-gradient(180deg, rgba(15, 126, 201, 0.28) 0%, rgba(22, 178, 231, 0.42) 100%);
+  box-shadow: 0 16rpx 32rpx rgba(19, 104, 165, 0.18);
+  overflow: hidden;
+}
+
+.steps-track-glow {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 14% 18%, rgba(255, 255, 255, 0.34) 0, rgba(255, 255, 255, 0) 28%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.18) 0%, rgba(255, 255, 255, 0) 56%);
+  pointer-events: none;
 }
 
 .mountain,
@@ -242,51 +263,42 @@ page {
   color: #2f3f57;
 }
 
-.steps-sync {
-  position: absolute;
-  left: 20rpx;
-  bottom: 24rpx;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 196rpx;
-  height: 50rpx;
-  padding: 0 20rpx;
-  border-radius: 999rpx;
-  background: rgba(22, 61, 96, 0.68);
-}
-
-.steps-sync-text {
-  font-size: 22rpx;
-  color: #ffffff;
-}
-
 .steps-track {
+  position: relative;
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
-  padding: 0 34rpx 10rpx;
-  margin-top: -10rpx;
+  align-items: stretch;
+  gap: 10rpx;
+  padding: 0;
+  margin-top: 0;
 }
 
 .track-item {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 6rpx 10rpx 0;
-  border-radius: 20rpx;
+  justify-content: center;
+  flex: 1;
+  min-height: 106rpx;
+  padding: 10rpx 8rpx 0;
+  border-radius: 24rpx;
+  background: rgba(255, 255, 255, 0.14);
+  border: 2rpx solid rgba(255, 255, 255, 0.18);
+  box-sizing: border-box;
 }
 
 .track-item-selected {
-  background: rgba(255, 255, 255, 0.14);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.94) 0%, rgba(238, 250, 255, 0.9) 100%);
+  border-color: rgba(255, 245, 157, 0.92);
+  box-shadow: 0 10rpx 20rpx rgba(12, 97, 152, 0.2);
 }
 
 .track-dot {
-  width: 18rpx;
-  height: 18rpx;
+  width: 20rpx;
+  height: 20rpx;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.55);
-  box-shadow: 0 0 0 8rpx rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.75);
+  box-shadow: 0 0 0 10rpx rgba(255, 255, 255, 0.1);
 }
 
 .track-dot-active {
@@ -294,21 +306,24 @@ page {
 }
 
 .track-dot-selected {
-  box-shadow: 0 0 0 10rpx rgba(255, 255, 255, 0.18);
+  box-shadow: 0 0 0 12rpx rgba(255, 233, 94, 0.22);
 }
 
 .track-text {
   margin-top: 12rpx;
-  font-size: 22rpx;
+  font-size: 24rpx;
+  font-weight: 600;
   color: #ffffff;
+  text-shadow: 0 4rpx 10rpx rgba(0, 56, 92, 0.18);
 }
 
 .track-text-selected {
-  font-weight: 700;
+  color: #16608c;
+  text-shadow: none;
 }
 
 .cards {
-  padding: 18rpx 14rpx 0;
+  padding: 20rpx 14rpx 0;
 }
 
 .challenge-card {

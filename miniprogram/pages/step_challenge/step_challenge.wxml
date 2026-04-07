@@ -31,21 +31,21 @@
         <view class="runner-leg runner-leg-right"></view>
       </view>
       <view class="steps-bubble">今日步数：{{todaySteps}}</view>
-      <view class="steps-sync" bindtap="handleSyncTap">
-        <text class="steps-sync-text">{{isSyncingSteps ? '同步中...' : '同步微信步数'}}</text>
-      </view>
     </view>
 
-    <view class="steps-track">
-      <view
-        wx:for="{{stepMarks}}"
-        wx:key="step"
-        class="track-item {{item.active ? 'track-item-selected' : ''}}"
-        data-step="{{item.value}}"
-        bindtap="handleStepMarkTap"
-      >
-        <view class="track-dot {{item.reached ? 'track-dot-active' : ''}} {{item.active ? 'track-dot-selected' : ''}}"></view>
-        <text class="track-text {{item.active ? 'track-text-selected' : ''}}">{{item.step}}</text>
+    <view class="steps-track-shell">
+      <view class="steps-track-glow"></view>
+      <view class="steps-track">
+        <view
+          wx:for="{{stepMarks}}"
+          wx:key="step"
+          class="track-item {{item.active ? 'track-item-selected' : ''}}"
+          data-step="{{item.value}}"
+          bindtap="handleStepMarkTap"
+        >
+          <view class="track-dot {{item.reached ? 'track-dot-active' : ''}} {{item.active ? 'track-dot-selected' : ''}}"></view>
+          <text class="track-text {{item.active ? 'track-text-selected' : ''}}">{{item.step}}</text>
+        </view>
       </view>
     </view>
   </view>

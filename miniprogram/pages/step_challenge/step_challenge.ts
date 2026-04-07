@@ -277,29 +277,35 @@ Page({
       navTitleTop: menuButtonInfo.top || 26
     })
 
-    this.bootstrap()
+    ;(this as any)._didFirstShow = false
+    this.bootstrap(true)
   },
 
   onShow() {
+    if (!(this as any)._didFirstShow) {
+      ;(this as any)._didFirstShow = true
+      return
+    }
+
     if (isLoggedIn()) {
-      this.loadChallengePage(this.data.selectedTargetSteps)
+      this.loadChallengePage(this.data.selectedTargetSteps, true)
     }
   },
 
-  bootstrap() {
+  bootstrap(syncAfterLoad = false) {
     if (isLoggedIn()) {
-      this.loadChallengePage(this.data.selectedTargetSteps)
+      this.loadChallengePage(this.data.selectedTargetSteps, syncAfterLoad)
       return
     }
 
     this.setData({ isLoading: true })
     wxLogin(() => {
       this.setData({ isLoading: false })
-      this.loadChallengePage(this.data.selectedTargetSteps)
+      this.loadChallengePage(this.data.selectedTargetSteps, syncAfterLoad)
     })
   },
 
-  loadChallengePage(targetSteps: number) {
+  loadChallengePage(targetSteps: number, syncAfterLoad = false) {
     if (this.data.isLoading) return
 
     this.setData({ isLoading: true })
@@ -339,7 +345,10 @@ Page({
           cards,
           history
         })
-        this.syncWeRunData(true)
+
+        if (syncAfterLoad) {
+          this.syncWeRunData(true, targetSteps)
+        }
       },
       fail: () => {
         wx.showToast({
@@ -357,16 +366,12 @@ Page({
     wx.navigateBack()
   },
 
-  handleSyncTap() {
-    this.syncWeRunData(false)
-  },
-
   noop() {},
 
   handleStepMarkTap(e: WechatMiniprogram.BaseEvent) {
     const targetSteps = Number((e.currentTarget.dataset as { step?: number }).step || 0)
     if (!targetSteps || targetSteps === this.data.selectedTargetSteps) return
-    this.loadChallengePage(targetSteps)
+    this.loadChallengePage(targetSteps, false)
   },
 
   handleCardTap(e: WechatMiniprogram.BaseEvent) {
@@ -437,7 +442,7 @@ Page({
           title: action === 'claimReward' ? '领取成功' : '报名成功',
           icon: 'success'
         })
-        this.loadChallengePage(targetSteps)
+        this.loadChallengePage(targetSteps, false)
       },
       fail: () => {
         wx.showToast({
@@ -512,7 +517,7 @@ Page({
     })
   },
 
-  syncWeRunData(silent: boolean) {
+  syncWeRunData(silent: boolean, targetSteps = this.data.selectedTargetSteps) {
     if (this.data.isSyncingSteps) return
 
     wx.getWeRunData({
@@ -533,6 +538,7 @@ Page({
           name: 'stepChallenge',
           data: {
             action: 'sync',
+            targetSteps,
             weRunData: wx.cloud.CloudID(cloudID)
           },
           success: (callRes) => {
@@ -549,7 +555,6 @@ Page({
 
             const data = result.data || {}
             const todaySteps = Number(data.todaySteps || 0)
-            const targetSteps = Number(this.data.selectedTargetSteps || TARGET_STEPS[0])
             const cloudCards = Array.isArray(data.cards) ? (data.cards as CloudCard[]) : []
             const history = Array.isArray(data.history)
               ? (data.history as HistoryItem[]).map((item) => ({
@@ -561,6 +566,7 @@ Page({
               : []
             this.setData({
               todaySteps,
+              selectedTargetSteps: targetSteps,
               stepMarks: buildStepMarks(todaySteps, targetSteps),
               cards: cloudCards.map(mapCard),
               history
