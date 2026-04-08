@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="pm-skills-main">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/pm-skills-main.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
