@@ -1,0 +1,112 @@
+[2026-04-15T17:52:51.268+08:00] [DEBUG] report_init {
+  "enabled": true,
+  "deviceId": "0f05ad63...",
+  "ide": "none"
+}
+[2026-04-15T17:52:51.270+08:00] [DEBUG] [cache] Using default TTL {
+  "ttlMs": 86400000
+}
+[2026-04-15T17:52:51.279+08:00] [DEBUG] [cache] failed to read cache meta, treating as miss {
+  "error": {
+    "errno": -2,
+    "code": "ENOENT",
+    "syscall": "open",
+    "path": "/Users/allin/Desktop/walk/.cloudbase-mcp/cache-meta.json"
+  }
+}
+[2026-04-15T17:52:51.279+08:00] [DEBUG] [downloadResources] 开始新下载任务
+[2026-04-15T17:52:51.279+08:00] [DEBUG] [downloadResources] 文件锁已获取
+[2026-04-15T17:52:51.280+08:00] [DEBUG] [cache] failed to read cache meta, treating as miss {
+  "error": {
+    "errno": -2,
+    "code": "ENOENT",
+    "syscall": "open",
+    "path": "/Users/allin/Desktop/walk/.cloudbase-mcp/cache-meta.json"
+  }
+}
+[2026-04-15T17:52:51.651+08:00] [DEBUG] [downloadOpenAPI] openAPIDocs 下载完成 {
+  "successCount": 5,
+  "total": 5
+}
+[2026-04-15T17:52:52.060+08:00] [DEBUG] [downloadResources] webTemplate 下载完成
+[2026-04-15T17:52:52.060+08:00] [DEBUG] [downloadResources] 所有资源下载完成
+[2026-04-15T17:52:52.063+08:00] [DEBUG] [downloadResources] 缓存已更新
+[2026-04-15T17:52:52.064+08:00] [DEBUG] [downloadResources] 文件锁已释放
+[2026-04-15T17:52:52.071+08:00] [INFO] TencentCloudBase MCP Server running on stdio
+[2026-04-15T17:52:52.071+08:00] [DEBUG] [telemetry] 生命周期事件 envId 获取结果 {
+  "event": "start",
+  "envId": "unknown",
+  "envIdSource": "default",
+  "hasCloudBaseOptions": false,
+  "cloudBaseOptionsEnvId": null
+}
+[2026-04-15T17:52:52.072+08:00] [DEBUG] [telemetry] 生命周期事件上报参数 {
+  "event": "start",
+  "eventData": {
+    "event": "start",
+    "envId": "unknown",
+    "nodeVersion": "v22.12.0",
+    "osType": "Darwin",
+    "osRelease": "24.5.0",
+    "arch": "arm64",
+    "mcpVersion": "1.0.0"
+  },
+  "envIdSource": "default"
+}
+[2026-04-15T17:52:52.223+08:00] [DEBUG] report_success {
+  "eventCode": "toolkit_lifecycle",
+  "deviceId": "0f05ad63..."
+}
+[2026-04-15T18:01:45.475+08:00] [DEBUG] [telemetry] 生命周期事件 envId 获取结果 {
+  "event": "exit",
+  "envId": "unknown",
+  "envIdSource": "default",
+  "hasCloudBaseOptions": false,
+  "cloudBaseOptionsEnvId": null
+}
+[2026-04-15T18:02:35.899+08:00] [DEBUG] report_init {
+  "enabled": true,
+  "deviceId": "1fa0052e...",
+  "ide": "none"
+}
+[2026-04-15T18:02:35.901+08:00] [DEBUG] [cache] Using default TTL {
+  "ttlMs": 86400000
+}
+[2026-04-15T18:02:35.908+08:00] [DEBUG] [cache] evaluated cache meta {
+  "ageMs": 583845,
+  "ttlMs": 86400000,
+  "valid": true
+}
+[2026-04-15T18:02:35.908+08:00] [DEBUG] [downloadResources] 使用缓存（快速路径）
+[2026-04-15T18:02:35.916+08:00] [INFO] TencentCloudBase MCP Server running on stdio
+[2026-04-15T18:02:35.916+08:00] [DEBUG] [telemetry] 生命周期事件 envId 获取结果 {
+  "event": "start",
+  "envId": "unknown",
+  "envIdSource": "default",
+  "hasCloudBaseOptions": false,
+  "cloudBaseOptionsEnvId": null
+}
+[2026-04-15T18:02:35.916+08:00] [DEBUG] [telemetry] 生命周期事件上报参数 {
+  "event": "start",
+  "eventData": {
+    "event": "start",
+    "envId": "unknown",
+    "nodeVersion": "v22.12.0",
+    "osType": "Darwin",
+    "osRelease": "24.5.0",
+    "arch": "arm64",
+    "mcpVersion": "1.0.0"
+  },
+  "envIdSource": "default"
+}
+[2026-04-15T18:02:36.078+08:00] [DEBUG] report_success {
+  "eventCode": "toolkit_lifecycle",
+  "deviceId": "1fa0052e..."
+}
+[2026-04-15T18:02:48.548+08:00] [DEBUG] [telemetry] 生命周期事件 envId 获取结果 {
+  "event": "exit",
+  "envId": "unknown",
+  "envIdSource": "default",
+  "hasCloudBaseOptions": false,
+  "cloudBaseOptionsEnvId": null
+}

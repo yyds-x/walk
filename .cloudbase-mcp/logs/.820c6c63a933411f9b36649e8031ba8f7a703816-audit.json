@@ -1,0 +1,15 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 30
+    },
+    "auditLog": "/Users/allin/Desktop/walk/.cloudbase-mcp/logs/.820c6c63a933411f9b36649e8031ba8f7a703816-audit.json",
+    "files": [
+        {
+            "date": 1776246771265,
+            "name": "/Users/allin/Desktop/walk/.cloudbase-mcp/logs/cloudbase-mcp-2026-04-15.log",
+            "hash": "aae8baec875715880c7fe539669e40179ed0e2984ef43dc1ac40912845da519c"
+        }
+    ],
+    "hashType": "sha256"
+}
