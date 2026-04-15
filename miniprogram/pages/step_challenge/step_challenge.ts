@@ -517,8 +517,9 @@ Page({
     })
   },
 
-  syncWeRunData(silent: boolean, targetSteps = this.data.selectedTargetSteps) {
+  syncWeRunData(silent: boolean, targetSteps?: number) {
     if (this.data.isSyncingSteps) return
+    const resolvedTargetSteps = typeof targetSteps === 'number' ? targetSteps : this.data.selectedTargetSteps
 
     wx.getWeRunData({
       success: (res) => {
@@ -538,7 +539,7 @@ Page({
           name: 'stepChallenge',
           data: {
             action: 'sync',
-            targetSteps,
+            targetSteps: resolvedTargetSteps,
             weRunData: wx.cloud.CloudID(cloudID)
           },
           success: (callRes) => {
@@ -566,8 +567,8 @@ Page({
               : []
             this.setData({
               todaySteps,
-              selectedTargetSteps: targetSteps,
-              stepMarks: buildStepMarks(todaySteps, targetSteps),
+              selectedTargetSteps: resolvedTargetSteps,
+              stepMarks: buildStepMarks(todaySteps, resolvedTargetSteps),
               cards: cloudCards.map(mapCard),
               history
             })
