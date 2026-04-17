@@ -10,7 +10,8 @@
     "pages/profile/profile",
     "pages/checkin/checkin",
     "pages/vitality_detail/vitality_detail",
-    "pages/step_challenge/step_challenge"
+    "pages/step_challenge/step_challenge",
+    "pages/treasury/treasury"
   ],
   "window": {
     "navigationBarTextStyle": "black",

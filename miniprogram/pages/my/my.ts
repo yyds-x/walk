@@ -150,6 +150,13 @@ Page({
   handleMenuClick(e: any) {
     const item = e.currentTarget.dataset.item;
     console.log('Clicked menu:', item.name);
-    // Navigate or handle action
+    if (item && item.name === '我的金库') {
+      wx.navigateTo({ url: '/pages/treasury/treasury' })
+      return
+    }
+    wx.showToast({
+      title: '功能开发中',
+      icon: 'none'
+    })
   }
 })
