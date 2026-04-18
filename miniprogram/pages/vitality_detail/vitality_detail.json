@@ -1,5 +1,6 @@
 {
-  "navigationStyle": "custom",
+  "navigationBarTitleText": "活力值余额",
+  "navigationBarBackgroundColor": "#F8F9FC",
+  "navigationBarTextStyle": "black",
   "usingComponents": {}
 }
-

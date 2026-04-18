@@ -1,121 +1,33 @@
 .page {
   min-height: 100vh;
-  background: #f5f7fa;
-}
-
-.nav {
-  background: #f5f7fa;
-  padding: 0 24rpx;
-  box-sizing: border-box;
-}
-
-.nav-inner {
-  height: 88rpx;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.nav-left {
-  width: 88rpx;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-}
-
-.back {
-  font-size: 44rpx;
-  color: #111;
-  line-height: 1;
-}
-
-.nav-title {
-  font-size: 32rpx;
-  font-weight: 600;
-  color: #111;
-}
-
-.nav-right {
-  width: 160rpx;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  gap: 14rpx;
-}
-
-.nav-icon {
-  width: 56rpx;
-  height: 56rpx;
-  border-radius: 999rpx;
-  background: rgba(255, 255, 255, 0.92);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 8rpx 18rpx rgba(15, 23, 42, 0.06);
-}
-
-.nav-icon-share {
-  padding: 0;
-  line-height: 56rpx;
-  border: 0;
-}
-
-.nav-icon-share::after {
-  border: 0;
-}
-
-.nav-dots {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 6rpx;
-}
-
-.nav-dot {
-  width: 6rpx;
-  height: 6rpx;
-  border-radius: 999rpx;
-  background: #111;
-}
-
-.nav-share-plus {
-  width: 34rpx;
-  height: 34rpx;
-  border-radius: 999rpx;
-  border: 2rpx solid #111;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 24rpx;
-  font-weight: 700;
-  color: #111;
-  line-height: 1;
+  background: #F8F9FC;
 }
 
 .hero {
-  padding: 12rpx 24rpx 0;
+  padding: 12rpx 30rpx 0;
   box-sizing: border-box;
+  position: relative;
+}
+
+.hero-glow {
+  position: absolute;
+  left: 30rpx;
+  right: 30rpx;
+  bottom: -12rpx;
+  height: 24rpx;
+  background: #53D639;
+  opacity: 0.44;
+  filter: blur(24px);
+  border-radius: 24rpx;
 }
 
 .hero-card {
-  background: #eafff0;
+  background: linear-gradient(183deg, rgba(84, 251, 158, 1) 0%, rgba(18, 218, 102, 1) 100%);
   border-radius: 24rpx;
   height: 290rpx;
-  padding: 26rpx 24rpx 24rpx;
+  padding: 0;
   position: relative;
   overflow: hidden;
-}
-
-.hero-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  opacity: 0.11;
-  background-image: linear-gradient(186.11deg, #54fb9e -52.25%, #12da66 102.69%);
-  z-index: 0;
 }
 
 .hero-bg {
@@ -137,108 +49,111 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  padding: 36rpx 30rpx 0;
+  box-sizing: border-box;
 }
 
+/* 数据区 */
 .metrics {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  align-items: flex-start;
 }
 
 .metric {
   flex: 1;
   min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .metric-label {
   display: flex;
   align-items: center;
-  gap: 10rpx;
+  gap: 8rpx;
   margin-bottom: 10rpx;
 }
 
-.metric-dot {
-  width: 18rpx;
-  height: 18rpx;
-  border-radius: 999rpx;
-  background: #fbbf24;
-  box-shadow: 0 6rpx 14rpx rgba(251, 191, 36, 0.35);
+.metric-icon {
+  width: 34rpx;
+  height: 34rpx;
 }
 
 .metric-name {
   font-size: 24rpx;
-  color: rgba(17, 17, 17, 0.6);
+  color: #121834;
+  opacity: 0.4;
+  font-family: "PingFang SC", sans-serif;
+  font-weight: 400;
 }
 
 .metric-value {
   font-size: 40rpx;
-  font-weight: 800;
-  color: #111;
+  font-weight: 400;
+  color: #121834;
+  font-family: "DIN", "DIN Alternate", "Helvetica Neue", sans-serif;
   letter-spacing: 1rpx;
 }
 
 .metric-divider {
-  width: 2rpx;
-  height: 72rpx;
-  background: rgba(17, 17, 17, 0.08);
-  margin: 0 18rpx;
-  border-radius: 999rpx;
+  width: 1rpx;
+  height: 36rpx;
+  background: #B1B9B4;
+  margin: 10rpx 0 0;
+  opacity: 0.5;
 }
 
+/* 推荐按钮 */
 .hero-btn-wrap {
-  margin-top: 20rpx;
-  position: relative;
   display: flex;
   justify-content: center;
-}
-
-.hero-btn-shadow {
-  position: absolute;
-  width: 520rpx;
-  height: 88rpx;
-  border-radius: 999rpx;
-  background: rgba(245, 158, 11, 0.35);
-  transform: translateY(12rpx);
-  filter: blur(12rpx);
+  padding-bottom: 24rpx;
 }
 
 .hero-btn {
-  width: 520rpx;
-  height: 88rpx;
+  width: 396rpx;
+  height: 72rpx;
   border-radius: 999rpx;
-  background: linear-gradient(180deg, #fbbf24 0%, #f59e0b 100%);
+  background: linear-gradient(0deg, #FF9F00 0%, #FFF400 100%);
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 8rpx;
   padding: 0;
   border: 0;
-  box-shadow: 0 18rpx 32rpx rgba(245, 158, 11, 0.28);
+  box-shadow: 0 4rpx 0 0 #F29929, inset 0 -2rpx 10rpx 0 rgba(255, 244, 70, 1);
 }
 
 .hero-btn::after {
   border: 0;
 }
 
-.hero-btn-text {
-  font-size: 28rpx;
-  font-weight: 700;
-  color: #5a3b00;
+.hero-btn-icon {
+  width: 36rpx;
+  height: 36rpx;
 }
 
+.hero-btn-text {
+  font-size: 28rpx;
+  font-weight: 500;
+  color: #754A00;
+  font-family: "PingFang SC", sans-serif;
+}
+
+/* ===== 明细列表 ===== */
 .ledger {
-  padding: 18rpx 24rpx calc(32rpx + env(safe-area-inset-bottom));
+  padding: 24rpx 30rpx calc(32rpx + env(safe-area-inset-bottom));
   box-sizing: border-box;
 }
 
 .ledger-card {
-  background: #fff;
+  background: #FFFFFF;
   border-radius: 24rpx;
   overflow: hidden;
-  box-shadow: 0 12rpx 30rpx rgba(15, 23, 42, 0.05);
 }
 
 .row {
-  padding: 26rpx 24rpx;
+  padding: 26rpx 32rpx;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -247,40 +162,45 @@
 .row-left {
   display: flex;
   flex-direction: column;
-  gap: 8rpx;
+  gap: 6rpx;
   min-width: 0;
 }
 
 .row-title {
   font-size: 30rpx;
-  color: #111;
-  font-weight: 700;
+  color: #121834;
+  font-weight: 500;
+  font-family: "PingFang SC", sans-serif;
 }
 
 .row-date {
-  font-size: 22rpx;
-  color: #888;
+  font-size: 24rpx;
+  color: #A2B0B8;
+  font-family: "PingFang SC", sans-serif;
+  font-weight: 400;
 }
 
 .row-amount {
-  font-size: 32rpx;
-  font-weight: 800;
+  font-size: 36rpx;
+  font-weight: 500;
+  font-family: "PingFang SC", sans-serif;
 }
 
 .row-amount.plus {
-  color: #16a34a;
+  color: #00C757;
 }
 
 .row-amount.minus {
-  color: #f97316;
+  color: #FA6400;
 }
 
 .row-divider {
-  height: 2rpx;
-  background: rgba(15, 23, 42, 0.06);
-  margin: 0 24rpx;
+  height: 1rpx;
+  background: #EDEDED;
+  margin: 0 32rpx;
 }
 
+/* 空状态 / 加载 / 没有更多 */
 .empty,
 .loading,
 .nomore {
@@ -290,8 +210,14 @@
 }
 
 .empty-text,
-.loading-text,
-.nomore-text {
+.loading-text {
   font-size: 24rpx;
-  color: #999;
+  color: #A2B0B8;
+}
+
+.nomore-text {
+  font-size: 26rpx;
+  color: #A2B0B8;
+  font-family: "PingFang SC", sans-serif;
+  font-weight: 400;
 }

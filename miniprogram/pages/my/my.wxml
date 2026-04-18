@@ -25,7 +25,7 @@
 
   <!-- Stats Card -->
   <view class="stats-card">
-    <view class="stat-item">
+    <view class="stat-item" bindtap="goVitalityDetail">
       <text class="stat-num">{{stats.balance}}</text>
       <view class="stat-label-row">
         <view class="dot yellow"></view>

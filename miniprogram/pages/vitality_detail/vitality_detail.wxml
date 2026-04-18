@@ -1,33 +1,16 @@
 <view class="page">
-  <view class="nav" style="padding-top: {{statusBarHeight}}px;">
-    <view class="nav-inner">
-      <view class="nav-left" bindtap="handleBack">
-        <text class="back">‹</text>
-      </view>
-      <view class="nav-title">活力值余额</view>
-      <view class="nav-right">
-        <view class="nav-icon nav-icon-more" bindtap="handleMore">
-          <view class="nav-dots">
-            <view class="nav-dot"></view>
-            <view class="nav-dot"></view>
-            <view class="nav-dot"></view>
-          </view>
-        </view>
-        <button class="nav-icon nav-icon-share" open-type="share" hover-class="none">
-          <text class="nav-share-plus">+</text>
-        </button>
-      </view>
-    </view>
-  </view>
-
+  <!-- Hero 活力值卡片 -->
   <view class="hero">
+    <!-- 绿色光晕阴影 -->
+    <view class="hero-glow"></view>
     <view class="hero-card">
       <image class="hero-bg" src="/images/welfare/vitality_beijing.svg" mode="aspectFill"></image>
       <view class="hero-content">
+        <!-- 数据区 -->
         <view class="metrics">
           <view class="metric">
             <view class="metric-label">
-              <view class="metric-dot"></view>
+              <image class="metric-icon" src="/images/vitality/huolizhi.svg" mode="aspectFit"></image>
               <text class="metric-name">今日合计</text>
             </view>
             <text class="metric-value">{{todayTotal}}</text>
@@ -35,16 +18,17 @@
           <view class="metric-divider"></view>
           <view class="metric">
             <view class="metric-label">
-              <view class="metric-dot"></view>
+              <image class="metric-icon" src="/images/vitality/huolizhi.svg" mode="aspectFit"></image>
               <text class="metric-name">我的活力值</text>
             </view>
             <text class="metric-value">{{balance}}</text>
           </view>
         </view>
 
+        <!-- 推荐按钮 -->
         <view class="hero-btn-wrap">
-          <view class="hero-btn-shadow"></view>
           <button class="hero-btn" open-type="share" hover-class="none">
+            <image class="hero-btn-icon" src="/images/vitality/fenxiang_btn.svg" mode="aspectFit"></image>
             <text class="hero-btn-text">推荐给好友赚活力值</text>
           </button>
         </view>
@@ -52,6 +36,7 @@
     </view>
   </view>
 
+  <!-- 明细列表 -->
   <view class="ledger">
     <view class="ledger-card" wx:if="{{items.length}}">
       <block wx:for="{{items}}" wx:key="id">
@@ -75,7 +60,7 @@
     </view>
 
     <view class="nomore" wx:if="{{!hasMore && items.length}}">
-      <text class="nomore-text">没有更多了</text>
+      <text class="nomore-text">没有更多了喔</text>
     </view>
   </view>
 </view>

@@ -31,7 +31,6 @@ function formatMoneyLike(num: number) {
 
 Page({
   data: {
-    statusBarHeight: 0,
     todayStr: '',
     todayTotal: '0.00',
     balance: '0.00',
@@ -43,8 +42,6 @@ Page({
   },
 
   onLoad() {
-    const systemInfo = wx.getSystemInfoSync()
-    this.setData({ statusBarHeight: systemInfo.statusBarHeight || 0 })
     if (isLoggedIn()) {
       this.loadMore(true)
       return
@@ -58,20 +55,6 @@ Page({
 
   onReachBottom() {
     this.loadMore(false)
-  },
-
-  handleBack() {
-    wx.navigateBack()
-  },
-
-  handleMore() {
-    wx.showActionSheet({
-      itemList: ['推荐给好友', '返回'],
-      success: (res) => {
-        if (res.tapIndex === 0) return
-        wx.navigateBack()
-      }
-    })
   },
 
   onShareAppMessage() {

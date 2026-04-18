@@ -147,6 +147,10 @@ Page({
     })
   },
 
+  goVitalityDetail() {
+    wx.navigateTo({ url: '/pages/vitality_detail/vitality_detail' })
+  },
+
   handleMenuClick(e: any) {
     const item = e.currentTarget.dataset.item;
     console.log('Clicked menu:', item.name);
