@@ -99,6 +99,29 @@ exports.main = async (event, context) => {
       }
     }
 
+    if (action === 'ranking') {
+      const limit = Math.min(100, Math.max(1, Number(event?.limit || 50)))
+      const res = await db
+        .collection('users')
+        .orderBy('vitalityBalance', 'desc')
+        .limit(limit)
+        .field({ nickName: true, avatarUrl: true, vitalityBalance: true })
+        .get()
+
+      const list = (res.data || []).map((u, idx) => ({
+        rank: idx + 1,
+        nickName: u.nickName || '匿名用户',
+        avatarUrl: u.avatarUrl || '/images/my/head.svg',
+        score: u.vitalityBalance || 0
+      }))
+
+      return {
+        code: 0,
+        message: 'ok',
+        data: { list }
+      }
+    }
+
     if (action === 'do') {
       const recordId = `${openid}_${todayStr}`
       const now = Date.now()

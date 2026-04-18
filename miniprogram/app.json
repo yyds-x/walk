@@ -11,7 +11,8 @@
     "pages/checkin/checkin",
     "pages/vitality_detail/vitality_detail",
     "pages/step_challenge/step_challenge",
-    "pages/treasury/treasury"
+    "pages/treasury/treasury",
+    "pages/ranking/ranking"
   ],
   "window": {
     "navigationBarTextStyle": "black",

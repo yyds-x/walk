@@ -1,0 +1,30 @@
+<svg width="375" height="420" viewBox="0 0 375 420" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="375" height="420" fill="url(#bg_grad)"/>
+  <!-- City buildings silhouette -->
+  <rect x="95" y="270" width="60" height="150" rx="4" fill="#1CA4D5" opacity="0.7"/>
+  <rect x="108" y="290" width="32" height="77" rx="2" fill="#1CAADF" opacity="0.6"/>
+  <rect x="64" y="320" width="49" height="100" rx="2" fill="#1CA4D5" opacity="0.5"/>
+  <rect x="41" y="306" width="47" height="114" rx="2" fill="#28C6FD" opacity="0.54"/>
+  <rect x="307" y="340" width="60" height="80" rx="2" fill="#1CA4D5" opacity="0.5"/>
+  <rect x="337" y="290" width="60" height="130" rx="2" fill="#1AA7DB" opacity="0.6"/>
+  <rect x="73" y="330" width="20" height="90" rx="2" fill="#5FD5FF" opacity="0.49"/>
+  <rect x="315" y="350" width="16" height="70" rx="2" fill="#4BCFFF" opacity="0.66"/>
+  <rect x="353" y="300" width="28" height="120" rx="2" fill="#1AA7DB" opacity="0.7"/>
+  <!-- Green hills -->
+  <path d="M0 370 Q60 310 140 355 Q200 380 240 350 Q300 310 375 340 L375 420 L0 420Z" fill="url(#green_grad)" opacity="0.9"/>
+  <path d="M0 390 Q80 340 180 375 Q260 400 375 360 L375 420 L0 420Z" fill="url(#green_grad2)" opacity="0.8"/>
+  <defs>
+    <linearGradient id="bg_grad" x1="187.5" y1="0" x2="187.5" y2="420" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#E0F7FF"/>
+      <stop offset="1" stop-color="#1DC1FC"/>
+    </linearGradient>
+    <linearGradient id="green_grad" x1="0" y1="310" x2="375" y2="420" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#CFFF6D"/>
+      <stop offset="1" stop-color="#15C262"/>
+    </linearGradient>
+    <linearGradient id="green_grad2" x1="0" y1="340" x2="375" y2="420" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#CFFF6D"/>
+      <stop offset="1" stop-color="#15C262"/>
+    </linearGradient>
+  </defs>
+</svg>

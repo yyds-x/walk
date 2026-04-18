@@ -1,0 +1,87 @@
+<view class="page">
+  <!-- 顶部背景区 -->
+  <view class="hero">
+    <view class="hero-bg">
+      <image class="hero-bg-img" src="/images/ranking/bg.svg" mode="aspectFill"></image>
+    </view>
+    <view class="hero-content">
+      <text class="hero-title">运动财富榜</text>
+      <!-- 前三名领奖台 -->
+      <view class="podium" wx:if="{{topThree.length >= 3}}">
+        <!-- 第2名 -->
+        <view class="podium-item second">
+          <view class="podium-avatar-wrap">
+            <image class="podium-avatar" src="{{topThree[1].avatarUrl}}" mode="aspectFill"></image>
+            <view class="podium-badge badge-silver">2</view>
+          </view>
+          <text class="podium-name">{{topThree[1].nickName}}</text>
+          <view class="podium-bar bar-second">
+            <text class="podium-score">{{topThree[1].score}}</text>
+          </view>
+        </view>
+        <!-- 第1名 -->
+        <view class="podium-item first">
+          <image class="crown-icon" src="/images/ranking/crown.svg" mode="aspectFit"></image>
+          <view class="podium-avatar-wrap">
+            <image class="podium-avatar podium-avatar-first" src="{{topThree[0].avatarUrl}}" mode="aspectFill"></image>
+            <view class="podium-badge badge-gold">1</view>
+          </view>
+          <text class="podium-name">{{topThree[0].nickName}}</text>
+          <view class="podium-bar bar-first">
+            <text class="podium-score">{{topThree[0].score}}</text>
+          </view>
+        </view>
+        <!-- 第3名 -->
+        <view class="podium-item third">
+          <view class="podium-avatar-wrap">
+            <image class="podium-avatar" src="{{topThree[2].avatarUrl}}" mode="aspectFill"></image>
+            <view class="podium-badge badge-bronze">3</view>
+          </view>
+          <text class="podium-name">{{topThree[2].nickName}}</text>
+          <view class="podium-bar bar-third">
+            <text class="podium-score">{{topThree[2].score}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 绿色分割条 -->
+  <view class="green-divider"></view>
+
+  <!-- 排行列表 -->
+  <view class="list-wrap">
+    <view class="list-card">
+      <!-- 表头 -->
+      <view class="list-header">
+        <text class="header-rank">排名</text>
+        <view class="header-right">
+          <image class="header-icon" src="/images/vitality/huolizhi.svg" mode="aspectFit"></image>
+          <text class="header-score">活力值</text>
+        </view>
+      </view>
+
+      <!-- 列表项 -->
+      <block wx:for="{{list}}" wx:key="rank">
+        <view class="list-row">
+          <view class="row-left">
+            <!-- 前三名用奖牌图标 -->
+            <image wx:if="{{item.rank <= 3}}" class="medal-icon" src="/images/ranking/medal_{{item.rank}}.svg" mode="aspectFit"></image>
+            <text wx:else class="rank-num">{{item.rank}}</text>
+            <image class="list-avatar" src="{{item.avatarUrl}}" mode="aspectFill"></image>
+            <text class="list-name">{{item.nickName}}</text>
+          </view>
+          <text class="list-score">{{item.scoreDisplay}}</text>
+        </view>
+      </block>
+
+      <view class="empty" wx:if="{{!list.length && !isLoading}}">
+        <text class="empty-text">暂无排行数据</text>
+      </view>
+
+      <view class="loading" wx:if="{{isLoading}}">
+        <text class="loading-text">加载中...</text>
+      </view>
+    </view>
+  </view>
+</view>

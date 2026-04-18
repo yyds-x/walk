@@ -158,6 +158,10 @@ Page({
       wx.navigateTo({ url: '/pages/treasury/treasury' })
       return
     }
+    if (item && item.name === '排行榜') {
+      wx.navigateTo({ url: '/pages/ranking/ranking' })
+      return
+    }
     wx.showToast({
       title: '功能开发中',
       icon: 'none'
