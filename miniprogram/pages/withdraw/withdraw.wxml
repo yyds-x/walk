@@ -1,0 +1,56 @@
+<view class="page">
+  <!-- Green header area -->
+  <view class="header">
+    <view class="balance-row">
+      <view class="balance-center">
+        <text class="balance-amount">{{balanceDisplay}}</text>
+        <text class="balance-unit">元</text>
+      </view>
+      <view class="history-btn" bindtap="goHistory">
+        <text class="history-text">提现记录</text>
+      </view>
+    </view>
+    <text class="balance-label">可提金额</text>
+  </view>
+
+  <!-- White card area -->
+  <view class="card">
+    <view class="card-title-row">
+      <text class="card-title">提现金额</text>
+      <text class="card-hint">（最少提现1元）</text>
+    </view>
+
+    <view class="input-row">
+      <text class="yen-sign">¥</text>
+      <input
+        class="amount-input"
+        type="digit"
+        placeholder="请输入提现金额"
+        placeholder-class="input-placeholder"
+        value="{{inputAmount}}"
+        bindinput="onAmountInput"
+      />
+      <view class="all-btn" bindtap="fillAll">
+        <text class="all-btn-text">全部</text>
+      </view>
+    </view>
+    <view class="input-line"></view>
+
+    <view class="withdraw-btn {{canSubmit ? '' : 'disabled'}}" bindtap="doWithdraw">
+      <text class="withdraw-btn-text">提现</text>
+    </view>
+
+    <view class="invite-btn" bindtap="inviteFriend">
+      <text class="invite-icon">🧧</text>
+      <text class="invite-text">邀请好友一起领红包</text>
+    </view>
+  </view>
+
+  <!-- Instructions -->
+  <view class="instructions">
+    <text class="instructions-title">提现说明</text>
+    <text class="instructions-item">1.额限制：最低提现金额为100元</text>
+    <text class="instructions-item">2.续费规则：提现到支付宝3元/笔，提现到银行卡2元/笔</text>
+    <text class="instructions-item">3.提现周期：申请提现后需要1至3个工作日审核，打款后24小时到账</text>
+  </view>
+</view>

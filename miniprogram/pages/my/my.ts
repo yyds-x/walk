@@ -147,6 +147,10 @@ Page({
     })
   },
 
+  goWithdraw() {
+    wx.navigateTo({ url: '/pages/withdraw/withdraw' })
+  },
+
   goVitalityDetail() {
     wx.navigateTo({ url: '/pages/vitality_detail/vitality_detail' })
   },
@@ -156,6 +160,10 @@ Page({
     console.log('Clicked menu:', item.name);
     if (item && item.name === '我的金库') {
       wx.navigateTo({ url: '/pages/treasury/treasury' })
+      return
+    }
+    if (item && item.name === '推广中心') {
+      wx.navigateTo({ url: '/pages/promotion/promotion' })
       return
     }
     if (item && item.name === '排行榜') {

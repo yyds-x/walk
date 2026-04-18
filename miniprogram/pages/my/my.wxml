@@ -33,7 +33,7 @@
       </view>
     </view>
     <view class="divider"></view>
-    <view class="stat-item">
+    <view class="stat-item" bindtap="goWithdraw">
       <text class="stat-num">{{stats.income}}</text>
       <view class="stat-label-row">
         <view class="dot purple"></view>

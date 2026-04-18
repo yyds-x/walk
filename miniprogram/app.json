@@ -12,7 +12,9 @@
     "pages/vitality_detail/vitality_detail",
     "pages/step_challenge/step_challenge",
     "pages/treasury/treasury",
-    "pages/ranking/ranking"
+    "pages/ranking/ranking",
+    "pages/withdraw/withdraw",
+    "pages/promotion/promotion"
   ],
   "window": {
     "navigationBarTextStyle": "black",
