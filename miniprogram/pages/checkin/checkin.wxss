@@ -47,28 +47,23 @@
 .bg-inner {
   position: relative;
   z-index: 2;
-  padding: 24rpx 30rpx 0;
+  padding: 0 30rpx;
   box-sizing: border-box;
 }
 
-.nav-row {
-  height: 88rpx;
-  display: flex;
-  align-items: center;
-}
-
 .nav-back {
-  width: 80rpx;
-  height: 64rpx;
+  position: absolute;
+  left: 24rpx;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.15);
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .nav-back-icon {
-  font-size: 44rpx;
-  color: #ffffff;
-  line-height: 1;
+  width: 36rpx;
+  height: 36rpx;
 }
 
 .user-row {

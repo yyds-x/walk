@@ -1,0 +1,73 @@
+<view class="page">
+  <!-- Hero image area -->
+  <view class="hero">
+    <image class="hero-img" src="/images/challenge/hero.jpg" mode="aspectFill"></image>
+    <!-- Back button -->
+    <view class="nav-bar" style="height: {{navBarTotalHeight}}px;">
+      <view class="nav-back-btn" bindtap="handleBack"
+        style="top: {{menuButtonTop}}px; width: {{menuButtonHeight}}px; height: {{menuButtonHeight}}px;">
+        <image class="nav-back-icon" src="/images/common/back-white.svg" mode="aspectFit"></image>
+      </view>
+    </view>
+    <!-- Notification marquee -->
+    <view class="marquee-area">
+      <view class="marquee-item" wx:for="{{notifications}}" wx:key="index">
+        <image class="marquee-avatar" src="{{item.avatar}}" mode="aspectFill"></image>
+        <text class="marquee-text">{{item.text}}</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- Purple-orange info bar -->
+  <view class="info-bar">
+    <view class="info-left">
+      <text class="shop-name">{{shopName}}</text>
+      <text class="original-price">原价{{originalPrice}}元</text>
+    </view>
+    <view class="info-right">
+      <view class="challenge-badge">
+        <text class="badge-text1">闯过</text>
+        <text class="badge-num">{{totalLevels}}</text>
+        <text class="badge-text1">关</text>
+      </view>
+      <text class="badge-text2">免消费单</text>
+    </view>
+  </view>
+
+  <!-- Green progress bar -->
+  <view class="progress-wrap">
+    <view class="progress-bar">
+      <view class="progress-fill" style="width: {{progressPercent}}%;"></view>
+    </view>
+  </view>
+
+  <!-- Participants grid -->
+  <view class="participants-card">
+    <view class="avatar-grid">
+      <view class="avatar-item" wx:for="{{participants}}" wx:key="index">
+        <image class="participant-avatar" src="{{item.avatar}}" mode="aspectFill"></image>
+      </view>
+      <view class="avatar-item avatar-more" wx:if="{{hasMoreParticipants}}" bindtap="viewMore">
+        <text class="more-arrow">></text>
+      </view>
+    </view>
+  </view>
+
+  <!-- Rules section -->
+  <view class="rules-card">
+    <text class="rules-title">活动规则</text>
+    <view class="rules-body">
+      <text class="rule-item" wx:for="{{rules}}" wx:key="index">{{item}}</text>
+    </view>
+  </view>
+
+  <!-- Bottom button -->
+  <view class="bottom-bar">
+    <view class="start-btn" bindtap="startChallenge">
+      <text class="start-btn-text">开始闯关</text>
+    </view>
+  </view>
+
+  <!-- Safe area spacer -->
+  <view style="height: calc(120rpx + env(safe-area-inset-bottom));"></view>
+</view>

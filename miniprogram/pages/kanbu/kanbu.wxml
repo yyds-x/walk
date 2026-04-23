@@ -1,0 +1,80 @@
+<view class="page">
+  <!-- Green header with back button -->
+  <view class="header" style="height: {{navBarTotalHeight}}px;">
+    <view class="nav-back-btn" bindtap="handleBack"
+      style="top: {{menuButtonTop}}px; width: {{menuButtonHeight}}px; height: {{menuButtonHeight}}px;">
+      <image class="nav-back-icon" src="/images/common/back-white.svg" mode="aspectFit"></image>
+    </view>
+    <text class="nav-title"
+      style="top: {{menuButtonTop}}px; line-height: {{menuButtonHeight}}px;">砍步免费拿</text>
+  </view>
+
+  <!-- Featured section with green bg -->
+  <view class="featured-section">
+    <view class="featured-header">
+      <view class="featured-left">
+        <text class="featured-title">精选推荐</text>
+        <text class="featured-sub">根据您目前步数进行推荐</text>
+      </view>
+      <view class="more-btn" bindtap="onMoreRecommend">
+        <text class="more-btn-text">更多推荐</text>
+        <text class="more-btn-arrow">></text>
+      </view>
+    </view>
+
+    <!-- Horizontal scroll product cards -->
+    <scroll-view class="featured-scroll" scroll-x enhanced show-scrollbar="{{false}}">
+      <view class="featured-list">
+        <view class="featured-card" wx:for="{{featuredItems}}" wx:key="id" bindtap="onItemTap" data-item="{{item}}">
+          <view class="featured-img-wrap">
+            <image class="featured-img" src="{{item.image}}" mode="aspectFill"></image>
+          </view>
+          <text class="featured-name">{{item.name}}</text>
+          <view class="featured-price-row">
+            <text class="featured-steps">{{item.steps}}步</text>
+            <text class="featured-price">¥{{item.price}}</text>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+
+  <!-- More products section -->
+  <view class="more-section">
+    <text class="more-title">更多砍步商品</text>
+
+    <!-- Category tabs -->
+    <scroll-view class="tabs-scroll" scroll-x enhanced show-scrollbar="{{false}}">
+      <view class="tabs-row">
+        <view class="tab-item {{activeTab === index ? 'active' : ''}}"
+          wx:for="{{tabs}}" wx:key="index"
+          bindtap="onTabTap" data-index="{{index}}">
+          <text class="tab-text {{activeTab === index ? 'tab-text-active' : ''}}">{{item}}</text>
+          <view class="tab-bar" wx:if="{{activeTab === index}}"></view>
+        </view>
+      </view>
+    </scroll-view>
+
+    <!-- Product grid (2-column) -->
+    <view class="product-grid">
+      <view class="product-card" wx:for="{{products}}" wx:key="id" bindtap="onItemTap" data-item="{{item}}">
+        <view class="product-img-wrap">
+          <image class="product-img" src="{{item.image}}" mode="aspectFill"></image>
+        </view>
+        <view class="product-info">
+          <text class="product-name">{{item.name}}</text>
+          <view class="tag-row">
+            <view class="tag">签到</view>
+            <view class="tag">邀好友</view>
+          </view>
+          <view class="product-price-row">
+            <text class="product-steps">{{item.steps}}步</text>
+            <text class="product-price">¥{{item.price}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view style="height: calc(40rpx + env(safe-area-inset-bottom));"></view>
+</view>

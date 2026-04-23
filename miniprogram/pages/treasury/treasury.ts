@@ -11,6 +11,9 @@ type PromotionItem = {
 Page({
   data: {
     statusBarHeight: 0,
+    navBarTotalHeight: 64,
+    menuButtonTop: 26,
+    menuButtonHeight: 32,
     avatarUrl: '/images/my/head.svg',
     todayIncome: '6949.0',
     totalIncome: '10000.0',
@@ -49,10 +52,17 @@ Page({
   },
 
   onLoad() {
-    const systemInfo = wx.getSystemInfoSync()
+    const { statusBarHeight } = wx.getSystemInfoSync()
+    const menuButtonInfo = wx.getMenuButtonBoundingClientRect()
+    const navBarHeight = (menuButtonInfo.top - statusBarHeight) * 2 + menuButtonInfo.height
+    this.setData({
+      statusBarHeight: statusBarHeight || 0,
+      navBarTotalHeight: (statusBarHeight || 20) + (navBarHeight || 44),
+      menuButtonTop: menuButtonInfo.top || 26,
+      menuButtonHeight: menuButtonInfo.height || 32
+    })
     const userInfo = getUserInfo()
     this.setData({
-      statusBarHeight: systemInfo.statusBarHeight || 0,
       avatarUrl: userInfo?.avatarUrl || '/images/my/head.svg'
     })
   },

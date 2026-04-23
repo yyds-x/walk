@@ -1,18 +1,12 @@
 <scroll-view class="page" type="list" scroll-y>
   <view class="header">
-    <view class="nav" style="padding-top: {{statusBarHeight}}px;">
-      <view class="nav-row">
-        <view class="nav-left" bindtap="handleBack">
-          <text class="nav-back">‹</text>
-        </view>
-        <text class="nav-title">我的金库</text>
-        <view class="nav-right">
-          <view class="nav-capsule">
-            <image class="nav-more" src="/images/home/gengduo.svg" mode="aspectFit"></image>
-            <view class="nav-dot"></view>
-          </view>
-        </view>
+    <view class="nav" style="height: {{navBarTotalHeight}}px;">
+      <view class="nav-back-btn nav-back-btn--light" bindtap="handleBack"
+        style="top: {{menuButtonTop}}px; width: {{menuButtonHeight}}px; height: {{menuButtonHeight}}px;">
+        <image class="nav-back-icon" src="/images/common/back-dark.svg" mode="aspectFit"></image>
       </view>
+      <text class="nav-title"
+        style="top: {{menuButtonTop}}px; line-height: {{menuButtonHeight}}px;">我的金库</text>
     </view>
 
     <view class="income-card">

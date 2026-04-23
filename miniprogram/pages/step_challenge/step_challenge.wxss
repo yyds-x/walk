@@ -35,25 +35,19 @@ page {
 .nav-back {
   position: absolute;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(0, 0, 0, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .nav-back {
   left: 24rpx;
 }
 
-.nav-back::after {
-  content: '';
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  width: 14rpx;
-  height: 14rpx;
-  margin-left: -4rpx;
-  margin-top: -7rpx;
-  border-left: 4rpx solid #ffffff;
-  border-bottom: 4rpx solid #ffffff;
-  transform: rotate(45deg);
+.nav-back-icon {
+  width: 36rpx;
+  height: 36rpx;
 }
 
 .hero-scene {

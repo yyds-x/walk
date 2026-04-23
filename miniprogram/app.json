@@ -14,7 +14,10 @@
     "pages/treasury/treasury",
     "pages/ranking/ranking",
     "pages/withdraw/withdraw",
-    "pages/promotion/promotion"
+    "pages/promotion/promotion",
+    "pages/challenge/challenge",
+    "pages/kanbu/kanbu",
+    "pages/kanbu_detail/kanbu_detail"
   ],
   "window": {
     "navigationBarTextStyle": "black",

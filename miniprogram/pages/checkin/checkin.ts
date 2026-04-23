@@ -24,6 +24,9 @@ function nextGiftDays(streak: number) {
 Page({
   data: {
     statusBarHeight: 0,
+    navBarTotalHeight: 64,
+    menuButtonTop: 26,
+    menuButtonHeight: 32,
     userInfo: {
       avatarUrl: ''
     },
@@ -48,8 +51,15 @@ Page({
   },
 
   onLoad() {
-    const systemInfo = wx.getSystemInfoSync()
-    this.setData({ statusBarHeight: systemInfo.statusBarHeight || 0 })
+    const { statusBarHeight } = wx.getSystemInfoSync()
+    const menuButtonInfo = wx.getMenuButtonBoundingClientRect()
+    const navBarHeight = (menuButtonInfo.top - statusBarHeight) * 2 + menuButtonInfo.height
+    this.setData({
+      statusBarHeight: statusBarHeight || 0,
+      navBarTotalHeight: (statusBarHeight || 20) + (navBarHeight || 44),
+      menuButtonTop: menuButtonInfo.top || 26,
+      menuButtonHeight: menuButtonInfo.height || 32
+    })
     this.setData({ userInfo: getUserInfo() || { avatarUrl: '/images/my/head.svg' } })
     if (isLoggedIn()) {
       this.loadStatus()

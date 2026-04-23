@@ -5,7 +5,9 @@
         class="nav-back"
         bindtap="handleBack"
         style="top: {{menuButtonTop}}px; width: {{menuButtonHeight}}px; height: {{menuButtonHeight}}px;"
-      ></view>
+      >
+        <image class="nav-back-icon" src="/images/common/back-white.svg" mode="aspectFit"></image>
+      </view>
       <text
         class="nav-title"
         style="top: {{navTitleTop}}px; line-height: {{menuButtonHeight}}px;"

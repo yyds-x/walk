@@ -1,0 +1,120 @@
+<view class="page">
+  <!-- Custom Navigation Bar -->
+  <view class="nav-bar" style="padding-top: {{statusBarHeight}}px;">
+    <view class="nav-bar-inner" style="height: {{navBarTotalHeight - statusBarHeight}}px;">
+      <view class="back-btn" style="top: {{menuButtonTop}}px; height: {{menuButtonHeight}}px; width: {{menuButtonHeight}}px;" bindtap="handleBack">
+        <image src="/images/common/back-dark.svg" class="back-icon" />
+      </view>
+    </view>
+  </view>
+
+  <!-- Scrollable Content -->
+  <scroll-view scroll-y class="content" style="top: {{navBarTotalHeight}}px;">
+    <!-- Product Image -->
+    <view class="product-image-section">
+      <swiper class="product-swiper" indicator-dots="{{false}}" current="{{currentImageIndex}}" bindchange="onSwiperChange">
+        <swiper-item wx:for="{{productImages}}" wx:key="index">
+          <image src="{{item}}" class="product-img" mode="aspectFill" />
+        </swiper-item>
+      </swiper>
+      <view class="image-indicator">{{currentImageIndex + 1}}/{{productImages.length}}</view>
+    </view>
+
+    <!-- Product Info Card -->
+    <view class="product-info-card">
+      <view class="product-name">{{productName}}</view>
+      <view class="price-row">
+        <text class="vitality-price">{{vitalityPrice}}活力值</text>
+        <text class="original-price">¥{{originalPrice}}</text>
+        <text class="remaining">今日剩余{{remaining}}件</text>
+      </view>
+      <view class="activity-hint" bindtap="onActivityInfo">
+        <text class="activity-text">每日限量，先到先得，砍步越多优惠越大</text>
+        <image src="/images/common/back-dark.svg" class="info-icon" />
+      </view>
+    </view>
+
+    <!-- Divider -->
+    <view class="section-divider"></view>
+
+    <!-- Lucky Box Section -->
+    <view class="lucky-section">
+      <view class="lucky-title">再获得{{remainingCodes}}个夺宝码可开启幸运礼盒</view>
+      
+      <!-- Countdown -->
+      <view class="countdown-row">
+        <text class="countdown-label">请于</text>
+        <view class="time-block"><text class="time-num">{{countdown.hours}}</text></view>
+        <text class="time-colon">:</text>
+        <view class="time-block"><text class="time-num">{{countdown.minutes}}</text></view>
+        <text class="time-colon">:</text>
+        <view class="time-block"><text class="time-num">{{countdown.seconds}}</text></view>
+        <text class="countdown-label">前完成</text>
+      </view>
+
+      <!-- Step Progress Bar -->
+      <view class="progress-section">
+        <view class="progress-bar-bg">
+          <view class="progress-bar-fill" style="width: {{progressPercent}}%;"></view>
+          <!-- Milestone nodes -->
+          <view class="milestone milestone-1 {{currentSteps >= 3000 ? 'active' : ''}}">
+            <image src="/images/kanbu/gift.svg" class="milestone-icon" />
+            <text class="milestone-label">3000步</text>
+          </view>
+          <view class="milestone milestone-2 {{currentSteps >= 6000 ? 'active' : ''}}">
+            <image src="/images/kanbu/gift.svg" class="milestone-icon" />
+            <text class="milestone-label">6000步</text>
+          </view>
+          <view class="milestone milestone-3 {{currentSteps >= 9000 ? 'active' : ''}}">
+            <image src="/images/kanbu/gift.svg" class="milestone-icon" />
+            <text class="milestone-label">9000步</text>
+          </view>
+        </view>
+      </view>
+
+      <!-- Steps Info -->
+      <view class="steps-info-row">
+        <view class="steps-info-item">
+          <text class="steps-info-label">我的步数</text>
+          <text class="steps-info-value">{{mySteps}}步</text>
+        </view>
+        <view class="steps-info-item">
+          <text class="steps-info-label">好友贡献步数</text>
+          <text class="steps-info-value">{{friendSteps}}步</text>
+        </view>
+      </view>
+    </view>
+
+    <!-- Divider -->
+    <view class="section-divider"></view>
+
+    <!-- Participation Records -->
+    <view class="records-section">
+      <view class="records-header">
+        <text class="records-title">参与记录 ({{records.length}})</text>
+        <view class="records-all" bindtap="onViewAllRecords">
+          <text class="records-all-text">全部记录</text>
+          <image src="/images/common/back-dark.svg" class="arrow-icon" />
+        </view>
+      </view>
+      <view class="record-item" wx:for="{{records}}" wx:key="index">
+        <image src="{{item.avatar}}" class="record-avatar" />
+        <view class="record-info">
+          <text class="record-name">{{item.name}}</text>
+          <text class="record-time">{{item.time}}</text>
+        </view>
+        <text class="record-steps">+{{item.steps}}步</text>
+      </view>
+    </view>
+
+    <!-- Bottom spacing for fixed button -->
+    <view class="bottom-space"></view>
+  </scroll-view>
+
+  <!-- Fixed Bottom Button -->
+  <view class="bottom-btn-wrapper">
+    <view class="bottom-btn" bindtap="onKanbu">
+      <text class="bottom-btn-text">还差{{remainSteps}}步，立即找好友砍步数</text>
+    </view>
+  </view>
+</view>

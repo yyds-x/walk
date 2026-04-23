@@ -7,7 +7,7 @@
   <!-- Feature Icons Grid -->
   <view class="autoWrapper14">
     <!-- Item 1: 砍步 -->
-    <view class="autoWrapper8">
+    <view class="autoWrapper8" bindtap="goKanbu">
       <image class="full-icon" src="{{images.kanbu}}"></image>
     </view>
 
@@ -17,7 +17,7 @@
     </view>
 
     <!-- Item 3: 闯关 -->
-    <view class="autoWrapper10">
+    <view class="autoWrapper10" bindtap="goChallenge">
        <image class="full-icon" src="{{images.chuangguan}}"></image>
     </view>
 
@@ -34,9 +34,9 @@
 
   <!-- Feature Labels -->
   <view class="autoWrapper15">
-    <text class="text2">砍步</text>
+    <text class="text2" bindtap="goKanbu">砍步</text>
     <text class="text3" bindtap="goStepChallenge">步数挑战</text>
-    <text class="text3">闯关</text>
+    <text class="text3" bindtap="goChallenge">闯关</text>
     <text class="text4">免费夺宝</text>
     <text class="text5">签到有礼</text>
   </view>

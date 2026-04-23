@@ -22,9 +22,19 @@ Page({
       })
     }
   },
+  goKanbu() {
+    wx.navigateTo({
+      url: '/pages/kanbu/kanbu'
+    })
+  },
   goStepChallenge() {
     wx.navigateTo({
       url: '/pages/step_challenge/step_challenge'
+    })
+  },
+  goChallenge() {
+    wx.navigateTo({
+      url: '/pages/challenge/challenge'
     })
   },
   loadImages() {

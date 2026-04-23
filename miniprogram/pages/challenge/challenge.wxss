@@ -1,0 +1,259 @@
+.page {
+  min-height: 100vh;
+  background: #5B2D8E;
+}
+
+/* ===== Hero ===== */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 560rpx;
+}
+
+.hero-img {
+  width: 100%;
+  height: 100%;
+}
+
+.nav-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  box-sizing: border-box;
+  padding-left: 24rpx;
+  padding-right: 24rpx;
+  z-index: 10;
+}
+
+.nav-back-btn {
+  position: absolute;
+  left: 24rpx;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-back-icon {
+  width: 36rpx;
+  height: 36rpx;
+}
+
+/* Marquee notifications */
+.marquee-area {
+  position: absolute;
+  left: 24rpx;
+  bottom: 100rpx;
+  display: flex;
+  flex-direction: column;
+  gap: 16rpx;
+  z-index: 5;
+}
+
+.marquee-item {
+  display: flex;
+  align-items: center;
+  gap: 12rpx;
+  background: rgba(0, 0, 0, 0.35);
+  border-radius: 32rpx;
+  padding: 8rpx 24rpx 8rpx 8rpx;
+}
+
+.marquee-avatar {
+  width: 48rpx;
+  height: 48rpx;
+  border-radius: 50%;
+}
+
+.marquee-text {
+  font-size: 24rpx;
+  color: #FFFFFF;
+}
+
+/* ===== Info Bar (purple left / orange right) ===== */
+.info-bar {
+  display: flex;
+  align-items: stretch;
+  margin-top: -40rpx;
+  position: relative;
+  z-index: 3;
+}
+
+.info-left {
+  flex: 1;
+  background: linear-gradient(135deg, #7B2FBE 0%, #5B2D8E 100%);
+  padding: 28rpx 32rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 0 0 0 0;
+}
+
+.shop-name {
+  font-size: 36rpx;
+  font-weight: 700;
+  color: #FFFFFF;
+  margin-bottom: 8rpx;
+}
+
+.original-price {
+  font-size: 28rpx;
+  color: #FFD740;
+  font-weight: 500;
+}
+
+.info-right {
+  width: 280rpx;
+  background: linear-gradient(135deg, #FF8F00 0%, #FF6D00 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20rpx 0;
+}
+
+.challenge-badge {
+  display: flex;
+  align-items: baseline;
+}
+
+.badge-text1 {
+  font-size: 30rpx;
+  color: #FFFFFF;
+  font-weight: 600;
+}
+
+.badge-num {
+  font-family: "DIN", "DIN Alternate", sans-serif;
+  font-size: 64rpx;
+  font-weight: 700;
+  color: #FFD740;
+  margin: 0 4rpx;
+  line-height: 1;
+}
+
+.badge-text2 {
+  font-size: 32rpx;
+  color: #FFFFFF;
+  font-weight: 700;
+  margin-top: 4rpx;
+}
+
+/* ===== Progress ===== */
+.progress-wrap {
+  padding: 0 32rpx;
+  position: relative;
+  z-index: 3;
+}
+
+.progress-bar {
+  height: 24rpx;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 12rpx;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #00C757 0%, #4CD964 100%);
+  border-radius: 12rpx;
+  transition: width 0.3s ease;
+}
+
+/* ===== Participants ===== */
+.participants-card {
+  margin: 24rpx 32rpx 0;
+  background: #FFFFFF;
+  border-radius: 24rpx;
+  padding: 32rpx;
+}
+
+.avatar-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20rpx;
+}
+
+.avatar-item {
+  width: 90rpx;
+  height: 90rpx;
+}
+
+.participant-avatar {
+  width: 90rpx;
+  height: 90rpx;
+  border-radius: 50%;
+}
+
+.avatar-more {
+  background: #F0F0F0;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.more-arrow {
+  font-size: 32rpx;
+  color: #999;
+}
+
+/* ===== Rules ===== */
+.rules-card {
+  margin: 24rpx 32rpx 0;
+  background: #FFFFFF;
+  border-radius: 24rpx;
+  padding: 36rpx;
+}
+
+.rules-title {
+  font-size: 32rpx;
+  font-weight: 700;
+  color: #121834;
+  text-align: center;
+  margin-bottom: 24rpx;
+}
+
+.rules-body {
+  background: #F8F4FF;
+  border-radius: 16rpx;
+  padding: 28rpx;
+  display: flex;
+  flex-direction: column;
+  gap: 16rpx;
+}
+
+.rule-item {
+  font-size: 26rpx;
+  color: #333;
+  line-height: 1.7;
+}
+
+/* ===== Bottom Bar ===== */
+.bottom-bar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 16rpx 32rpx calc(16rpx + env(safe-area-inset-bottom));
+  background: #5B2D8E;
+  z-index: 20;
+}
+
+.start-btn {
+  width: 100%;
+  height: 100rpx;
+  background: linear-gradient(90deg, #FF8F00 0%, #FFB300 100%);
+  border-radius: 50rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.start-btn-text {
+  font-size: 36rpx;
+  font-weight: 700;
+  color: #FFFFFF;
+}
