@@ -42,6 +42,11 @@ Page({
       url: '/pages/free_treasure/free_treasure'
     })
   },
+  goCheckin() {
+    wx.navigateTo({
+      url: '/pages/checkin/checkin'
+    })
+  },
   loadImages() {
     const fileIDs = [
       'cloud://cloud1-4gs1rgg8854b4ac1.636c-cloud1-4gs1rgg8854b4ac1-1417287829/home/banner.svg',

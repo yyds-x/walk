@@ -1,12 +1,14 @@
 <view class="page">
   <view class="bg">
 
-    <view class="bg-inner" style="height: {{navBarTotalHeight}}px;">
-      <view class="nav-back" bindtap="handleBack"
-        style="top: {{menuButtonTop}}px; width: {{menuButtonHeight}}px; height: {{menuButtonHeight}}px;">
-        <image class="nav-back-icon" src="/images/common/back-white.svg" mode="aspectFit"></image>
+    <view class="bg-inner">
+      <view class="nav" style="height: {{navBarTotalHeight}}px;">
+        <view class="nav-back-btn nav-back-btn--light" bindtap="handleBack"
+          style="top: {{menuButtonTop}}px; width: {{menuButtonHeight}}px; height: {{menuButtonHeight}}px;">
+          <image class="nav-back-icon" src="/images/common/back-dark.svg" mode="aspectFit"></image>
+        </view>
       </view>
-      <view class="user-row" style="margin-top: {{navBarTotalHeight + 12}}px;">
+      <view class="user-row">
         <image class="avatar" src="{{userInfo.avatarUrl}}" mode="aspectFill"></image>
         <view class="user-meta">
           <text class="streak-title">已连续签到 {{streak}} 天</text>

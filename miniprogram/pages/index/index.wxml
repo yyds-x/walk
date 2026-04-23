@@ -27,7 +27,7 @@
     </view>
 
     <!-- Item 5: 签到有礼 -->
-    <view class="autoWrapper13">
+    <view class="autoWrapper13" bindtap="goCheckin">
        <image class="full-icon" src="{{images.qiandaoyouli}}"></image>
     </view>
   </view>
@@ -38,7 +38,7 @@
     <text class="text3" bindtap="goStepChallenge">步数挑战</text>
     <text class="text3" bindtap="goChallenge">闯关</text>
     <text class="text4" bindtap="goFreeTreasure">免费夺宝</text>
-    <text class="text5">签到有礼</text>
+    <text class="text5" bindtap="goCheckin">签到有礼</text>
   </view>
 
   <!-- Task Banner -->
