@@ -37,6 +37,11 @@ Page({
       url: '/pages/challenge/challenge'
     })
   },
+  goFreeTreasure() {
+    wx.navigateTo({
+      url: '/pages/free_treasure/free_treasure'
+    })
+  },
   loadImages() {
     const fileIDs = [
       'cloud://cloud1-4gs1rgg8854b4ac1.636c-cloud1-4gs1rgg8854b4ac1-1417287829/home/banner.svg',

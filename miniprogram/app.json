@@ -16,6 +16,7 @@
     "pages/withdraw/withdraw",
     "pages/promotion/promotion",
     "pages/challenge/challenge",
+    "pages/free_treasure/free_treasure",
     "pages/kanbu/kanbu",
     "pages/kanbu_detail/kanbu_detail"
   ],

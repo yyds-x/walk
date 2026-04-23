@@ -32,7 +32,7 @@ Page({
 
   _timer: null as any,
 
-  onLoad(options: any) {
+  onLoad(_options: any) {
     const { statusBarHeight } = wx.getSystemInfoSync()
     const menuButtonInfo = wx.getMenuButtonBoundingClientRect()
     const navBarHeight = (menuButtonInfo.top - statusBarHeight) * 2 + menuButtonInfo.height

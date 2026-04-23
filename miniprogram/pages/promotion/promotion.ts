@@ -1,4 +1,4 @@
-import { wxLogin, isLoggedIn, getUserInfo } from '../../utils/login'
+import { wxLogin, isLoggedIn } from '../../utils/login'
 
 Page({
   data: {
@@ -35,7 +35,7 @@ Page({
 
   onMenuTap(e: any) {
     const item = e.currentTarget.dataset.item
-    wx.showToast({ title: '功能开发中', icon: 'none' })
+    wx.showToast({ title: item && item.name ? item.name : '功能开发中', icon: 'none' })
   },
 
   onBannerTap() {

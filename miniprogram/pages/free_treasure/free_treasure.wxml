@@ -1,0 +1,126 @@
+<scroll-view class="page" type="list" scroll-y>
+  <view class="hero">
+    <swiper class="hero-swiper" circular autoplay interval="3500" bindchange="handleSwiperChange">
+      <block wx:for="{{images}}" wx:key="index">
+        <swiper-item>
+          <image class="hero-img" src="{{item}}" mode="aspectFill"></image>
+        </swiper-item>
+      </block>
+    </swiper>
+
+    <view class="nav" style="height: {{navBarTotalHeight}}px;">
+      <view class="nav-back-btn nav-back-btn--light" bindtap="handleBack"
+        style="top: {{menuButtonTop}}px; width: {{menuButtonHeight}}px; height: {{menuButtonHeight}}px;">
+        <image class="nav-back-icon" src="/images/common/back-dark.svg" mode="aspectFit"></image>
+      </view>
+      <view class="nav-right" style="top: {{menuButtonTop}}px; height: {{menuButtonHeight}}px;">
+        <view class="nav-capsule" bindtap="handleMore">
+          <image class="nav-more" src="/images/home/gengduo.svg" mode="aspectFit"></image>
+          <view class="nav-dot"></view>
+        </view>
+      </view>
+    </view>
+
+    <view class="hero-indicator">
+      <text class="hero-indicator-text">{{currentIndex}}/{{imagesCount}}</text>
+    </view>
+
+    <view class="toast-list">
+      <block wx:for="{{notifications}}" wx:key="id">
+        <view class="toast-item">
+          <image class="toast-avatar" src="{{item.avatar}}" mode="aspectFill"></image>
+          <text class="toast-text" overflow="ellipsis" max-lines="1">{{item.text}}</text>
+        </view>
+      </block>
+    </view>
+  </view>
+
+  <view class="card">
+    <text class="product-title">{{productTitle}}</text>
+    <text class="product-sub">今日剩余{{remainCount}}件</text>
+
+    <view class="row-between mt-24">
+      <text class="period">期号：{{periodNo}}</text>
+      <view class="link" bindtap="handleViewMyCodes">
+        <text class="link-text">查看我的夺宝号码</text>
+        <image class="link-arrow" src="/icons/s-arrow-g.svg" mode="aspectFit"></image>
+      </view>
+    </view>
+
+    <view class="progress-row mt-24">
+      <view class="progress-bar">
+        <view class="progress-fill" style="width: {{progressPercent}}%;"></view>
+      </view>
+      <text class="progress-percent">{{progressPercent}}%</text>
+    </view>
+
+    <view class="row-between mt-16">
+      <text class="progress-tip">距开奖还差{{remainShares}}份</text>
+      <view class="progress-pill">
+        <text class="progress-pill-text">满{{totalShares}}份后开奖</text>
+      </view>
+    </view>
+
+    <view class="box mt-28">
+      <text class="box-title">再获得{{needMoreCodes}}个夺宝码开启幸运礼盒</text>
+      <text class="box-sub">已有{{ownedCodes}}个夺宝码</text>
+
+      <view class="track">
+        <view class="track-line"></view>
+        <view class="track-fill" style="width: {{codePercent}}%;"></view>
+
+        <view class="track-node track-node-0 {{node0Class}}"></view>
+        <view class="track-node track-node-4 {{node4Class}}"></view>
+        <view class="track-node track-node-8 {{node8Class}}"></view>
+        <view class="track-node track-node-10 {{node10Class}}"></view>
+
+        <view class="track-icon track-icon-4">
+          <text class="track-icon-text">+</text>
+        </view>
+        <view class="track-icon track-icon-8">
+          <image class="track-gift" src="/images/kanbu/gift.svg" mode="aspectFit"></image>
+        </view>
+        <view class="track-icon track-icon-10">
+          <image class="track-lock" src="/images/vitality/huolizhi.svg" mode="aspectFit"></image>
+        </view>
+      </view>
+
+      <view class="track-labels">
+        <text class="track-label">0个</text>
+        <text class="track-label">4个</text>
+        <text class="track-label">8个</text>
+        <text class="track-label">10个</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="records mt-28">
+    <view class="records-head">
+      <view class="records-left">
+        <image class="records-icon" src="/images/vitality/huolizhi.svg" mode="aspectFit"></image>
+        <text class="records-title">参与记录 ({{recordCount}})</text>
+      </view>
+      <view class="records-right" bindtap="handleViewAllRecords">
+        <text class="records-more">全部记录</text>
+        <image class="link-arrow" src="/icons/s-arrow-g.svg" mode="aspectFit"></image>
+      </view>
+    </view>
+
+    <view class="records-card">
+      <block wx:for="{{records}}" wx:key="id">
+        <view class="record-item">
+          <image class="record-avatar" src="{{item.avatar}}" mode="aspectFill"></image>
+          <text class="record-text" overflow="ellipsis" max-lines="1">{{item.text}}</text>
+        </view>
+      </block>
+    </view>
+  </view>
+
+  <view class="bottom-space"></view>
+
+  <view class="bottom-bar">
+    <view class="bottom-btn" bindtap="handleJoin">
+      <text class="bottom-btn-text">夺宝免费拿</text>
+    </view>
+  </view>
+</scroll-view>
