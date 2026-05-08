@@ -1,0 +1,332 @@
+<template id="walk-hook-template">
+  <div
+    id="walk-hook"
+    data-composition-id="walk-hook"
+    data-start="0"
+    data-width="1920"
+    data-height="1080"
+    data-duration="5"
+  >
+    <div class="scene-content">
+      <div class="sky-band"></div>
+      <div class="sun-orbit" data-layout-ignore></div>
+      <div class="road" data-layout-ignore>
+        <div class="road-line"></div>
+      </div>
+
+      <section class="copy">
+        <p class="eyebrow">WALK MINI PROGRAM</p>
+        <h1>把每天走路<br />变成看得见的福利</h1>
+        <p class="subline">步数挑战、连续签到、活力值任务，一次串起日常动力。</p>
+      </section>
+
+      <section class="phone-wrap">
+        <div class="phone">
+          <div class="phone-top">
+            <span>今日步数</span>
+            <strong>34,353</strong>
+          </div>
+          <div class="runner-card">
+            <div class="mountain"></div>
+            <div class="runner">
+              <span class="head"></span>
+              <span class="body"></span>
+              <span class="arm arm-l"></span>
+              <span class="arm arm-r"></span>
+              <span class="leg leg-l"></span>
+              <span class="leg leg-r"></span>
+            </div>
+          </div>
+          <div class="step-track">
+            <span></span><span></span><span></span><span></span>
+          </div>
+          <div class="pill-row">
+            <img src="../../miniprogram/images/welfare/huolizhi.svg" alt="" />
+            <span>预计奖励 +68 活力值</span>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <style>
+      #walk-hook {
+        color: #143322;
+        overflow: hidden;
+        font-family: "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
+      }
+
+      #walk-hook .scene-content {
+        width: 100%;
+        height: 100%;
+        padding: 128px 150px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 96px;
+        background: #f5fff6;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .sky-band {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 1920px;
+        height: 360px;
+        background: #dff9f0;
+      }
+
+      .sun-orbit {
+        position: absolute;
+        right: 210px;
+        top: 88px;
+        width: 190px;
+        height: 190px;
+        border-radius: 50%;
+        background: #ffd65a;
+        box-shadow: 0 0 0 42px rgba(255, 214, 90, 0.18);
+      }
+
+      .road {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 1920px;
+        height: 250px;
+        background: #b7e5c7;
+        clip-path: polygon(0 34%, 100% 0, 100% 100%, 0 100%);
+      }
+
+      .road-line {
+        position: absolute;
+        left: 430px;
+        top: 112px;
+        width: 960px;
+        height: 9px;
+        background: repeating-linear-gradient(90deg, #ffffff 0 74px, transparent 74px 122px);
+        opacity: 0.9;
+      }
+
+      .copy,
+      .phone-wrap {
+        position: relative;
+        z-index: 2;
+      }
+
+      .copy {
+        width: 760px;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+      }
+
+      .eyebrow {
+        margin: 0;
+        width: fit-content;
+        padding: 12px 22px;
+        border-radius: 999px;
+        background: #e8433f;
+        color: #ffffff;
+        font-size: 24px;
+        font-weight: 800;
+        letter-spacing: 0;
+      }
+
+      h1 {
+        margin: 0;
+        color: #143322;
+        font-size: 104px;
+        line-height: 1.05;
+        font-weight: 900;
+        letter-spacing: 0;
+      }
+
+      .subline {
+        width: 660px;
+        margin: 0;
+        color: #47705b;
+        font-size: 34px;
+        line-height: 1.45;
+        font-weight: 600;
+      }
+
+      .phone-wrap {
+        width: 560px;
+        height: 780px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .phone {
+        width: 430px;
+        height: 760px;
+        padding: 34px;
+        border-radius: 56px;
+        border: 12px solid #143322;
+        background: #ffffff;
+        box-shadow: 0 32px 70px rgba(20, 51, 34, 0.22);
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+      }
+
+      .phone-top {
+        height: 142px;
+        border-radius: 32px;
+        background: #1fb66b;
+        color: #ffffff;
+        padding: 24px 28px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 8px;
+      }
+
+      .phone-top span {
+        font-size: 28px;
+        font-weight: 700;
+      }
+
+      .phone-top strong {
+        font-size: 60px;
+        line-height: 1;
+      }
+
+      .runner-card {
+        position: relative;
+        height: 240px;
+        border-radius: 32px;
+        background: #dff9f0;
+        overflow: hidden;
+      }
+
+      .mountain {
+        position: absolute;
+        left: 28px;
+        bottom: 0;
+        width: 330px;
+        height: 150px;
+        background: #76cf91;
+        clip-path: polygon(0 100%, 25% 35%, 42% 78%, 61% 16%, 100% 100%);
+      }
+
+      .runner {
+        position: absolute;
+        left: 170px;
+        top: 74px;
+        width: 108px;
+        height: 116px;
+      }
+
+      .runner span {
+        position: absolute;
+        display: block;
+        background: #e8433f;
+      }
+
+      .head {
+        left: 38px;
+        top: 0;
+        width: 34px;
+        height: 34px;
+        border-radius: 50%;
+      }
+
+      .body {
+        left: 48px;
+        top: 36px;
+        width: 17px;
+        height: 54px;
+        border-radius: 12px;
+      }
+
+      .arm,
+      .leg {
+        width: 14px;
+        height: 56px;
+        border-radius: 12px;
+        transform-origin: top center;
+      }
+
+      .arm-l {
+        left: 33px;
+        top: 42px;
+      }
+
+      .arm-r {
+        left: 64px;
+        top: 42px;
+      }
+
+      .leg-l {
+        left: 40px;
+        top: 84px;
+      }
+
+      .leg-r {
+        left: 62px;
+        top: 84px;
+      }
+
+      .step-track {
+        height: 96px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 18px;
+        border-radius: 28px;
+        background: #f3fbf5;
+      }
+
+      .step-track span {
+        width: 56px;
+        height: 56px;
+        border-radius: 50%;
+        background: #1fb66b;
+        border: 8px solid #d7f7df;
+      }
+
+      .pill-row {
+        height: 88px;
+        border-radius: 999px;
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        padding: 0 24px;
+        background: #fff0c9;
+        color: #a66400;
+        font-size: 27px;
+        font-weight: 800;
+      }
+
+      .pill-row img {
+        width: 44px;
+        height: 44px;
+      }
+    </style>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <script>
+      (function () {
+        const scope = "#walk-hook";
+        const tl = gsap.timeline({ paused: true });
+
+        tl.fromTo(`${scope} .sky-band`, { y: -180 }, { y: 0, duration: 0.7, ease: "power3.out" }, 0);
+        tl.fromTo(`${scope} .copy`, { opacity: 0, y: 70 }, { opacity: 1, y: 0, duration: 0.85, ease: "power3.out" }, 0.15);
+        tl.fromTo(`${scope} .phone-wrap`, { opacity: 0, x: 120, rotation: 4 }, { opacity: 1, x: 0, rotation: 0, duration: 0.9, ease: "back.out(1.3)" }, 0.35);
+        tl.fromTo(`${scope} .phone`, { y: 0 }, { y: -18, duration: 1.5, yoyo: true, repeat: 2, ease: "sine.inOut" }, 1.0);
+        tl.fromTo(`${scope} .arm-l`, { rotation: 30 }, { rotation: -38, duration: 0.34, yoyo: true, repeat: 10, ease: "sine.inOut" }, 0.7);
+        tl.fromTo(`${scope} .arm-r`, { rotation: -36 }, { rotation: 34, duration: 0.34, yoyo: true, repeat: 10, ease: "sine.inOut" }, 0.7);
+        tl.fromTo(`${scope} .leg-l`, { rotation: -30 }, { rotation: 35, duration: 0.34, yoyo: true, repeat: 10, ease: "sine.inOut" }, 0.7);
+        tl.fromTo(`${scope} .leg-r`, { rotation: 34 }, { rotation: -30, duration: 0.34, yoyo: true, repeat: 10, ease: "sine.inOut" }, 0.7);
+        tl.to(`${scope} .road-line`, { x: -210, duration: 4.2, ease: "none" }, 0.4);
+        tl.to(`${scope} .scene-content`, { opacity: 0, duration: 0.35, ease: "power2.in" }, 4.65);
+
+        window.__timelines = window.__timelines || {};
+        window.__timelines["walk-hook"] = tl;
+      })();
+    </script>
+  </div>
+</template>

@@ -1,0 +1,386 @@
+<template id="walk-loop-template">
+  <div
+    id="walk-loop"
+    data-composition-id="walk-loop"
+    data-start="0"
+    data-width="1920"
+    data-height="1080"
+    data-duration="8"
+  >
+    <div class="scene-content">
+      <section class="phone phone-left">
+        <div class="nav">福利</div>
+        <div class="bubble-stage">
+          <img class="big-bubble" src="../../miniprogram/images/welfare/daqipao.svg" alt="" />
+          <div class="bubble-copy">
+            <strong>496.00</strong>
+            <span>我的活力值</span>
+          </div>
+          <div class="mini-bubble bubble-a">+9<br /><span>步数奖励</span></div>
+          <div class="mini-bubble bubble-b">+8<br /><span>签到奖励</span></div>
+        </div>
+        <div class="red-card">
+          <img src="../../miniprogram/images/welfare/hongbao.svg" alt="" />
+          <div>
+            <span>每日领红包</span>
+            <strong>瓜分 8000 元</strong>
+          </div>
+        </div>
+      </section>
+
+      <section class="center-copy">
+        <p>轻任务，强反馈</p>
+        <h2>活力值每天都在增长</h2>
+        <div class="task-stack">
+          <div class="task">
+            <img src="../../miniprogram/images/welfare/bangdingshoujihao.svg" alt="" />
+            <span>绑定手机号</span>
+            <strong>+300</strong>
+          </div>
+          <div class="task">
+            <img src="../../miniprogram/images/welfare/shouquanweixing.svg" alt="" />
+            <span>授权微信信息</span>
+            <strong>+300</strong>
+          </div>
+          <div class="task">
+            <img src="../../miniprogram/images/welfare/yaoqinghaoyou.svg" alt="" />
+            <span>邀请好友</span>
+            <strong>+300</strong>
+          </div>
+        </div>
+      </section>
+
+      <section class="phone phone-right">
+        <div class="nav">签到有礼</div>
+        <div class="streak">
+          <span>已连续签到</span>
+          <strong>6 天</strong>
+        </div>
+        <div class="days">
+          <div class="day done">✓<span>第1天</span></div>
+          <div class="day done">✓<span>第2天</span></div>
+          <div class="day done">✓<span>第3天</span></div>
+          <div class="day active">
+            <img src="../../miniprogram/images/welfare/huolizhi.svg" alt="" />
+            <span>第4天</span>
+          </div>
+          <div class="day">
+            <img src="../../miniprogram/images/welfare/jiangli.svg" alt="" />
+            <span>礼包</span>
+          </div>
+        </div>
+        <div class="check-btn">立即签到</div>
+      </section>
+    </div>
+
+    <style>
+      #walk-loop {
+        color: #143322;
+        font-family: "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
+        overflow: hidden;
+      }
+
+      #walk-loop .scene-content {
+        width: 100%;
+        height: 100%;
+        padding: 92px 116px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 56px;
+        background: #eafaf0;
+        overflow: hidden;
+        position: relative;
+      }
+
+      #walk-loop .scene-content::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 1920px;
+        height: 330px;
+        background: #1fb66b;
+        opacity: 0.13;
+      }
+
+      .phone {
+        width: 430px;
+        height: 820px;
+        padding: 34px;
+        border-radius: 52px;
+        background: #ffffff;
+        border: 10px solid #143322;
+        box-shadow: 0 30px 70px rgba(20, 51, 34, 0.18);
+        position: relative;
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+      }
+
+      .nav {
+        height: 62px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 32px;
+        font-weight: 900;
+      }
+
+      .bubble-stage {
+        position: relative;
+        height: 330px;
+        border-radius: 34px;
+        background: #dff9f0;
+        overflow: hidden;
+      }
+
+      .big-bubble {
+        position: absolute;
+        left: 70px;
+        top: 36px;
+        width: 220px;
+        height: 220px;
+      }
+
+      .bubble-copy {
+        position: absolute;
+        left: 82px;
+        top: 95px;
+        width: 196px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: #ffffff;
+      }
+
+      .bubble-copy strong {
+        font-size: 46px;
+      }
+
+      .bubble-copy span,
+      .mini-bubble span {
+        font-size: 20px;
+        font-weight: 700;
+      }
+
+      .mini-bubble {
+        position: absolute;
+        width: 112px;
+        height: 112px;
+        border-radius: 50%;
+        background: #ffd65a;
+        color: #a66400;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        font-size: 30px;
+        font-weight: 900;
+        text-align: center;
+        line-height: 1.1;
+      }
+
+      .bubble-a {
+        left: 20px;
+        top: 52px;
+      }
+
+      .bubble-b {
+        right: 18px;
+        bottom: 38px;
+      }
+
+      .red-card {
+        height: 190px;
+        border-radius: 34px;
+        background: #fff0c9;
+        padding: 26px;
+        display: flex;
+        align-items: center;
+        gap: 20px;
+      }
+
+      .red-card img {
+        width: 110px;
+        height: 110px;
+      }
+
+      .red-card div {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .red-card span {
+        color: #a66400;
+        font-size: 25px;
+        font-weight: 800;
+      }
+
+      .red-card strong {
+        color: #e8433f;
+        font-size: 34px;
+      }
+
+      .center-copy {
+        width: 680px;
+        min-height: 720px;
+        position: relative;
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 28px;
+      }
+
+      .center-copy p {
+        width: fit-content;
+        margin: 0;
+        padding: 12px 22px;
+        border-radius: 999px;
+        background: #143322;
+        color: #ffffff;
+        font-size: 25px;
+        font-weight: 900;
+      }
+
+      .center-copy h2 {
+        margin: 0;
+        color: #143322;
+        font-size: 82px;
+        line-height: 1.08;
+        font-weight: 900;
+        letter-spacing: 0;
+      }
+
+      .task-stack {
+        margin-top: 16px;
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+      }
+
+      .task {
+        height: 104px;
+        padding: 0 28px;
+        border-radius: 28px;
+        background: #ffffff;
+        display: flex;
+        align-items: center;
+        gap: 24px;
+        box-shadow: 0 16px 36px rgba(20, 51, 34, 0.1);
+      }
+
+      .task img {
+        width: 58px;
+        height: 58px;
+      }
+
+      .task span {
+        flex: 1;
+        font-size: 30px;
+        font-weight: 800;
+      }
+
+      .task strong {
+        color: #1fb66b;
+        font-size: 32px;
+      }
+
+      .streak {
+        height: 150px;
+        border-radius: 34px;
+        background: #1fb66b;
+        color: #ffffff;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 0 30px;
+      }
+
+      .streak span {
+        font-size: 28px;
+        font-weight: 700;
+      }
+
+      .streak strong {
+        font-size: 62px;
+        line-height: 1.05;
+      }
+
+      .days {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+      }
+
+      .day {
+        height: 114px;
+        border-radius: 26px;
+        background: #f3fbf5;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 7px;
+        color: #47705b;
+        font-size: 34px;
+        font-weight: 900;
+      }
+
+      .day span {
+        font-size: 20px;
+      }
+
+      .day img {
+        width: 42px;
+        height: 42px;
+      }
+
+      .day.done {
+        background: #d8f6df;
+        color: #1fb66b;
+      }
+
+      .day.active {
+        background: #fff0c9;
+        color: #a66400;
+      }
+
+      .check-btn {
+        height: 88px;
+        border-radius: 999px;
+        background: #e8433f;
+        color: #ffffff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 34px;
+        font-weight: 900;
+        margin-top: auto;
+      }
+    </style>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <script>
+      (function () {
+        const scope = "#walk-loop";
+        const tl = gsap.timeline({ paused: true });
+
+        tl.fromTo(`${scope} .phone-left`, { opacity: 0, x: -90, rotation: -3 }, { opacity: 1, x: 0, rotation: 0, duration: 0.75, ease: "power3.out" }, 0);
+        tl.fromTo(`${scope} .phone-right`, { opacity: 0, x: 90, rotation: 3 }, { opacity: 1, x: 0, rotation: 0, duration: 0.75, ease: "power3.out" }, 0.2);
+        tl.fromTo(`${scope} .center-copy`, { opacity: 0, y: 60 }, { opacity: 1, y: 0, duration: 0.75, ease: "power3.out" }, 0.55);
+        tl.fromTo(`${scope} .task`, { opacity: 0, x: 54 }, { opacity: 1, x: 0, duration: 0.5, stagger: 0.16, ease: "power3.out" }, 1.15);
+        tl.fromTo(`${scope} .big-bubble`, { scale: 0.92 }, { scale: 1.05, duration: 1.1, yoyo: true, repeat: 5, ease: "sine.inOut" }, 0.8);
+        tl.fromTo(`${scope} .mini-bubble`, { y: 0 }, { y: -14, duration: 0.9, yoyo: true, repeat: 7, stagger: 0.18, ease: "sine.inOut" }, 1.0);
+        tl.fromTo(`${scope} .check-btn`, { scale: 1 }, { scale: 1.045, duration: 0.7, yoyo: true, repeat: 7, ease: "sine.inOut" }, 1.2);
+        tl.to(`${scope} .scene-content`, { opacity: 0, duration: 0.35, ease: "power2.in" }, 7.65);
+
+        window.__timelines = window.__timelines || {};
+        window.__timelines["walk-loop"] = tl;
+      })();
+    </script>
+  </div>
+</template>

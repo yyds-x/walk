@@ -1,0 +1,296 @@
+<template id="walk-reward-template">
+  <div
+    id="walk-reward"
+    data-composition-id="walk-reward"
+    data-start="0"
+    data-width="1920"
+    data-height="1080"
+    data-duration="7"
+  >
+    <div class="scene-content">
+      <section class="product-panel">
+        <div class="panel-head">
+          <span>V联盟 · 新人专区</span>
+          <strong>快来领取新人专属福利吧</strong>
+        </div>
+        <div class="product-card card-a">
+          <div class="product-img food-a"></div>
+          <div class="product-copy">
+            <h3>白千层肚 150g</h3>
+            <div class="tags"><span>签到</span><span>邀好友</span><b>赚 ¥2</b></div>
+            <p>500 活力值 · 456人已兑换</p>
+          </div>
+        </div>
+        <div class="product-card card-b">
+          <div class="product-img food-b"></div>
+          <div class="product-copy">
+            <h3>雄丰牛筋丸 500g</h3>
+            <div class="tags"><span>签到</span><span>闯关</span><b>赚 ¥2</b></div>
+            <p>500 活力值 · 2343人已兑换</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="final-copy">
+        <div class="coin-ring">
+          <img src="../../miniprogram/images/welfare/huolizhi.svg" alt="" />
+        </div>
+        <h2>走路、签到、做任务</h2>
+        <p>把碎片化行动沉淀成可兑换、可邀请、可持续的会员增长闭环。</p>
+        <div class="cta">打开 Walk，今天就多走一步</div>
+      </section>
+    </div>
+
+    <style>
+      #walk-reward {
+        color: #143322;
+        font-family: "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
+        overflow: hidden;
+      }
+
+      #walk-reward .scene-content {
+        width: 100%;
+        height: 100%;
+        padding: 108px 130px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 88px;
+        background: #fff8df;
+        position: relative;
+        overflow: hidden;
+      }
+
+      #walk-reward .scene-content::before {
+        content: "";
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 760px;
+        height: 1080px;
+        background: #dff9f0;
+      }
+
+      .product-panel,
+      .final-copy {
+        position: relative;
+        z-index: 2;
+      }
+
+      .product-panel {
+        width: 720px;
+        height: 780px;
+        padding: 42px;
+        border-radius: 44px;
+        background: #ffffff;
+        box-shadow: 0 28px 70px rgba(166, 100, 0, 0.18);
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+      }
+
+      .panel-head {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .panel-head span {
+        color: #e8433f;
+        font-size: 30px;
+        font-weight: 900;
+      }
+
+      .panel-head strong {
+        color: #47705b;
+        font-size: 25px;
+      }
+
+      .product-card {
+        height: 252px;
+        border-radius: 32px;
+        background: #f3fbf5;
+        display: flex;
+        align-items: center;
+        gap: 26px;
+        padding: 26px;
+      }
+
+      .product-img {
+        width: 190px;
+        height: 190px;
+        border-radius: 30px;
+        background: #ffe0dd;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .product-img::before,
+      .product-img::after {
+        content: "";
+        position: absolute;
+        border-radius: 50%;
+      }
+
+      .food-a::before {
+        left: 24px;
+        top: 38px;
+        width: 140px;
+        height: 110px;
+        background: #f7c7bf;
+      }
+
+      .food-a::after {
+        left: 42px;
+        top: 82px;
+        width: 110px;
+        height: 26px;
+        background: #e8433f;
+        opacity: 0.7;
+      }
+
+      .food-b {
+        background: #fff0c9;
+      }
+
+      .food-b::before {
+        left: 28px;
+        top: 36px;
+        width: 56px;
+        height: 56px;
+        background: #b46b3a;
+        box-shadow: 70px 10px 0 #b46b3a, 38px 86px 0 #b46b3a;
+      }
+
+      .food-b::after {
+        left: 18px;
+        bottom: 22px;
+        width: 152px;
+        height: 28px;
+        background: #1fb66b;
+      }
+
+      .product-copy {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+      }
+
+      .product-copy h3 {
+        margin: 0;
+        color: #143322;
+        font-size: 34px;
+        line-height: 1.2;
+      }
+
+      .tags {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+
+      .tags span,
+      .tags b {
+        padding: 8px 14px;
+        border-radius: 999px;
+        font-size: 21px;
+        font-weight: 900;
+      }
+
+      .tags span {
+        background: #dff9f0;
+        color: #1fb66b;
+      }
+
+      .tags b {
+        background: #e8433f;
+        color: #ffffff;
+      }
+
+      .product-copy p {
+        margin: 0;
+        color: #47705b;
+        font-size: 23px;
+        font-weight: 700;
+      }
+
+      .final-copy {
+        width: 820px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 30px;
+      }
+
+      .coin-ring {
+        width: 142px;
+        height: 142px;
+        border-radius: 50%;
+        background: #ffffff;
+        border: 14px solid #ffd65a;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 20px 42px rgba(166, 100, 0, 0.18);
+      }
+
+      .coin-ring img {
+        width: 74px;
+        height: 74px;
+      }
+
+      .final-copy h2 {
+        margin: 0;
+        font-size: 92px;
+        line-height: 1.05;
+        font-weight: 900;
+        letter-spacing: 0;
+      }
+
+      .final-copy p {
+        width: 720px;
+        margin: 0;
+        color: #47705b;
+        font-size: 34px;
+        line-height: 1.48;
+        font-weight: 700;
+      }
+
+      .cta {
+        margin-top: 16px;
+        min-width: 540px;
+        height: 96px;
+        padding: 0 42px;
+        border-radius: 999px;
+        background: #1fb66b;
+        color: #ffffff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 34px;
+        font-weight: 900;
+        box-shadow: 0 20px 44px rgba(31, 182, 107, 0.3);
+      }
+    </style>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <script>
+      (function () {
+        const scope = "#walk-reward";
+        const tl = gsap.timeline({ paused: true });
+
+        tl.fromTo(`${scope} .product-panel`, { opacity: 0, x: -96, rotation: -2 }, { opacity: 1, x: 0, rotation: 0, duration: 0.8, ease: "power3.out" }, 0);
+        tl.fromTo(`${scope} .product-card`, { opacity: 0, y: 44 }, { opacity: 1, y: 0, duration: 0.55, stagger: 0.18, ease: "power3.out" }, 0.45);
+        tl.fromTo(`${scope} .final-copy`, { opacity: 0, y: 72 }, { opacity: 1, y: 0, duration: 0.85, ease: "power3.out" }, 0.95);
+        tl.fromTo(`${scope} .coin-ring`, { scale: 0.92, rotation: -8 }, { scale: 1.08, rotation: 8, duration: 1.1, yoyo: true, repeat: 4, ease: "sine.inOut" }, 1.4);
+        tl.fromTo(`${scope} .cta`, { scale: 1 }, { scale: 1.045, duration: 0.75, yoyo: true, repeat: 5, ease: "sine.inOut" }, 2.1);
+        tl.to(`${scope} .scene-content`, { opacity: 0, duration: 0.45, ease: "power2.in" }, 6.55);
+
+        window.__timelines = window.__timelines || {};
+        window.__timelines["walk-reward"] = tl;
+      })();
+    </script>
+  </div>
+</template>
